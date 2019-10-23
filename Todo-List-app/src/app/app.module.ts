@@ -11,6 +11,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeComponent } from './home/home.component';
 import { AddNewTaskComponent } from './add-new-task/add-new-task.component';
 import { DoneListComponent } from './done-list/done-list.component';
@@ -24,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthentificationService } from './shared/auth/authentification.service';
 import { TaskListService } from './shared/task-list/task-list.service';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
@@ -41,11 +43,13 @@ import { TaskListService } from './shared/task-list/task-list.service';
    ],
    imports: [
       BrowserModule,
+      FormsModule,
       AppRoutingModule,
       AngularFireModule.initializeApp(environment.firebaseConfig),
       AngularFireDatabaseModule,
       BrowserAnimationsModule,
-      MatButtonModule
+      MatButtonModule,
+      AngularFireAuthModule
    ],
    providers: [
     AuthentificationService,
