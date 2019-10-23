@@ -1,3 +1,11 @@
-<p>
-  register works!
-</p>
+<div class="register">
+    <input placeholder="login" [(ngModel)]="credentials.login">
+    <input placeholder="password" [(ngModel)]="credentials.password">
+    <div>
+      <button (click)="register()">Register</button>
+    </div>
+    <p>{{ credentials | json }}</p>
+  </div>
+
+
+
