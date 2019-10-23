@@ -1,0 +1,10 @@
+.navbar {
+  min-height: 5rem;
+  &_item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    a {
+      color: white;
+    }
+  }
+}
