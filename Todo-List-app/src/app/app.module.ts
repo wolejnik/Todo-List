@@ -26,6 +26,7 @@ import { AuthentificationService } from './shared/auth/authentification.service'
 import { TaskListService } from './shared/task-list/task-list.service';
 
 import { FormsModule } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
    declarations: [
@@ -53,7 +54,8 @@ import { FormsModule } from '@angular/forms';
    ],
    providers: [
     AuthentificationService,
-    TaskListService
+    TaskListService,
+    AngularFirestore
    ],
    bootstrap: [
       AppComponent

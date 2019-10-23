@@ -1,3 +1,9 @@
-<p>
-  add-new-task works!
-</p>
+<div class="container">
+  <h1>Miejsce na dodowanie tasków</h1>
+</div>
+<div class="container">
+  <form #addNewTaskForm="ngForm" (submit)="onSubmit(addNewTaskForm)" autocomplete="off">
+    <input name="task" ngModel required #task="ngModel" placeholder="Add new task" required>
+    <button type="submit" [disabled]="addNewTaskForm.invalid">Add new task</button>
+  </form>
+</div>
