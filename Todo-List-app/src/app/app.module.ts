@@ -15,12 +15,15 @@ import { HomeComponent } from './home/home.component';
 import { AddNewTaskComponent } from './add-new-task/add-new-task.component';
 import { DoneListComponent } from './done-list/done-list.component';
 import { InProgressListComponent } from './in-progress-list/in-progress-list.component';
-import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { AuthentificationService } from './shared/auth/authentification.service';
+import { TaskListService } from './shared/task-list/task-list.service';
+
 
 @NgModule({
    declarations: [
@@ -29,12 +32,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       AddNewTaskComponent,
       DoneListComponent,
       InProgressListComponent,
-      LoginComponent,
       RegisterComponent,
       TaskDetailsComponent,
       TaskEditComponent,
       TodoListComponent,
-      DashboardComponent
+      DashboardComponent,
+      LoginComponent
    ],
    imports: [
       BrowserModule,
@@ -44,7 +47,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
       BrowserAnimationsModule,
       MatButtonModule
    ],
-   providers: [],
+   providers: [
+    AuthentificationService,
+    TaskListService
+   ],
    bootstrap: [
       AppComponent
    ]
