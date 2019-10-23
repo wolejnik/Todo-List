@@ -1,3 +1,16 @@
-<p>
-  todo-list works!
-</p>
+<div class="list_task_todo">
+    Lista zadań
+    <ul>
+      <ng-container *ngFor="let task of todoTasks">
+        <ng-container *ngIf="task.userID == user.uid" >
+          <ng-container *ngIf="task.isToDo == true" >
+            <li>{{task.desc}}
+              <button (click)="onDelete(task.taskID)">Usuń</button>
+              <button (click)="updateTaskToProgress(task.taskID)">W trakcie</button>
+              <button (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
