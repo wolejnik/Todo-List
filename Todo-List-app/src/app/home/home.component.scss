@@ -1,0 +1,63 @@
+.navbar {
+  &_item {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    a {
+      color: white;
+    }
+  }
+}
+
+.container-fluid {
+  width: 100vw;
+  height: auto;
+  background: #2c3e50;
+  background: linear-gradient(to right, #091540, #7692FF);
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: whitesmoke;
+  .homepage {
+    &_background {
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &_logo {
+        padding-top: 10rem;
+      }
+      &_title {
+        padding-top: 3rem;
+        h1 {
+          font-size: 4rem;
+          font-weight: 700;
+          font-style: normal;
+          color: black;
+          text-align: center;
+        }
+      }
+      &_content {
+        font-size: 2rem;
+        font-weight: 500;
+        color: black;
+        text-align: center;
+
+      }
+      &_button{
+        width: 20rem;
+        height: 5rem;
+        font-size: 2.5rem;
+        margin-top: 1rem;
+        margin-right: 2rem;
+
+        justify-content: center;
+        border-width: medium;
+        text-align: center;
+      }
+    }
+
+  }
+}
+
+.row {
+  margin: 0;
+}
