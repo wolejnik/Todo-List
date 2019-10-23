@@ -1,3 +1,15 @@
-<p>
-  task-edit works!
-</p>
+<div class="test">
+<ng-container *ngFor="let task of todoTasks">
+    <div *ngIf="task.taskID == idUrl">
+      <form #taskform="ngForm">
+        <label for="register-email">Email</label>
+        <input name="desc" id="task-desc" type="text" [(ngModel)]="task.desc" ngModel required>
+
+        <button type="button" (click)="onSubmit(taskform)">Update</button>
+        <button [routerLink]="['/dashboard']">
+            Back
+        </button>
+      </form>
+    </div>
+  </ng-container>
+</div>
