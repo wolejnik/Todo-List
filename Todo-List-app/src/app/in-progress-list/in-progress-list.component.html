@@ -1,3 +1,21 @@
-<p>
-  in-progress-list works!
-</p>
+<div class="list_task_inProgress">
+    W trkacie wykonywania
+    <ul>
+      <ng-container *ngFor="let task of todoTasks">
+        <ng-container *ngIf="task.userID == user.uid" >
+          <ng-container *ngIf="task.isProgress == true" >
+            <li>
+              <a
+              [class.selected]="task === selectedTask"
+              (click)="onSelect(task)"
+              [routerLink]="['/task', task.taskID]">{{task.desc}}
+            </a>
+              <button (click)="onDelete(task.taskID)">Usuń</button>
+              <button (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+              <button (click)="updateTaskToToDo(task.taskID)">Cofnij</button>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
