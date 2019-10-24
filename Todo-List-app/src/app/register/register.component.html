@@ -1,11 +1,25 @@
-<div class="register">
-    <input placeholder="login" [(ngModel)]="credentials.login">
-    <input placeholder="password" [(ngModel)]="credentials.password">
-    <div>
-      <button (click)="register()">Register</button>
+<div class="container-fluid">
+    <div class="login_wrapper">
+      <mat-card class="login_wrapper_card">
+        <mat-card-header class="login_wrapper_card_header">
+          <mat-card-title class="login_wrapper_card_header_title">Log in</mat-card-title>
+        </mat-card-header>
+        <form>
+          <mat-card-content>
+            <mat-form-field class="mat_form_field_width">
+              <input matInput placeholder="Username">
+            </mat-form-field>
+
+            <mat-form-field class="mat_form_field_width">
+              <input matInput placeholder="Password">
+            </mat-form-field>
+
+            <mat-form-field class="mat_form_field_width">
+                <input matInput placeholder="Confirm Password">
+              </mat-form-field>
+          </mat-card-content>
+          <button mat-stroked-button color="accent" class="btn-block button_login">Log in</button>
+        </form>
+      </mat-card>
     </div>
-    <p>{{ credentials | json }}</p>
   </div>
-
-
-

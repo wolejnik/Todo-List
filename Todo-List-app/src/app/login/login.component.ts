@@ -3,7 +3,6 @@ import { Account } from './../models/account';
 import { User } from 'firebase';
 import { AuthentificationService } from '../shared/auth/authentification.service';
 import { Router } from '@angular/router';
-import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
