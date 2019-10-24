@@ -19,6 +19,17 @@
     min-width: 25rem;
     min-height: 30rem;
     padding: 2rem;
+    & > form {
+      & > button {
+        font-size: 1.5rem;
+        &:focus {
+          border: none;
+        }
+      }
+      &.button_login {
+        padding: 0.5rem 0 0.5rem 0;
+      }
+    }
     &_header {
       display: flex;
       flex-direction: row;
@@ -32,26 +43,13 @@
   }
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
+.mat_form_field_width {
+  margin-top: 1rem;
+  font-size: 1.25rem;
   width: 100%;
 }
 
-.example-full-width {
-  width: 100%;
-}
 
-.example-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.example-container > * {
-  width: 100%;
+.button_login {
+  padding: 0.5rem 0 0.5rem 0;
 }
