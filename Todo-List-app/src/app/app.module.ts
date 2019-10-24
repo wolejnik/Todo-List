@@ -25,8 +25,16 @@ import { LoginComponent } from './login/login.component';
 import { AuthentificationService } from './shared/auth/authentification.service';
 import { TaskListService } from './shared/task-list/task-list.service';
 
-import { FormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+
+// angular material
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+
+
 
 @NgModule({
    declarations: [
@@ -50,7 +58,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
       AngularFireDatabaseModule,
       BrowserAnimationsModule,
       MatButtonModule,
-      AngularFireAuthModule
+      AngularFireAuthModule,
+      ReactiveFormsModule,
+      MatCardModule,
+      MatFormFieldModule,
+      MatInputModule
    ],
    providers: [
     AuthentificationService,
