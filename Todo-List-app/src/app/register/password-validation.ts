@@ -3,7 +3,7 @@ export class PasswordValidation {
 
     static MatchPassword(AC: AbstractControl) {
         const password = AC.get('password').value;
-        if(AC.get('confirmPassword').touched || AC.get('confirmPassword').dirty) {
+        if (AC.get('confirmPassword').touched || AC.get('confirmPassword').dirty) {
           const verifyPassword = AC.get('confirmPassword').value;
 
           if (password !== verifyPassword) {

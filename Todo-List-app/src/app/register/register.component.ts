@@ -32,9 +32,9 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
-      'email' : [null, [Validators.required, Validators.pattern(this.emailregex)]],
-      'password' : [null, [Validators.required, this.checkPassword]],
-      'confirmPassword' : [null, [Validators.required]]
+      email : [null, [Validators.required, Validators.pattern(this.emailregex)]],
+      password : [null, [Validators.required, this.checkPassword]],
+      confirmPassword : [null, [Validators.required]]
      }, {
       validator: PasswordValidation.MatchPassword
     });
@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
   checkPassword(control) {
     const enteredPassword = control.value;
     const passwordCheck = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
-    return (!passwordCheck.test(enteredPassword) && enteredPassword) ? { 'requirements': true } : null;
+    return (!passwordCheck.test(enteredPassword) && enteredPassword) ? { requirements : true } : null;
   }
 
   getErrorEmail() {
