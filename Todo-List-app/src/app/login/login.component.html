@@ -22,7 +22,7 @@
           </mat-form-field>
 
           <mat-form-field class="mat_form_field_width">
-            <input matInput placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
+            <input matInput type="password" placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
             <mat-hint>Wybierz hasło składające się z co najmniej ośmiu znaków, jednej dużej litery i jednej cyfry.</mat-hint>
             <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
               {{ getErrorPassword() }}

@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.formGroup = this.formBuilder.group({
-     email : [null, [Validators.required, Validators.pattern(this.emailregex)]],
+     email : [null, [Validators.required, Validators.minLength(8), Validators.pattern(this.emailregex)]],
       password : [null, [Validators.required, this.checkPassword]]
     });
    }
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     })
     .catch(
-      error => console.log(error.message)
+      error => confirm(error.message)
     );
   }
 

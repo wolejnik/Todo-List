@@ -2,23 +2,35 @@
     <div class="login_wrapper">
       <mat-card class="login_wrapper_card">
         <mat-card-header class="login_wrapper_card_header">
-          <mat-card-title class="login_wrapper_card_header_title">Log in</mat-card-title>
+          <mat-card-title class="login_wrapper_card_header_title">Sign up</mat-card-title>
         </mat-card-header>
-        <form>
-          <mat-card-content>
-            <mat-form-field class="mat_form_field_width">
-              <input matInput placeholder="Username">
-            </mat-form-field>
+        <form [formGroup]="formGroup">
+          <mat-form-field class="mat_form_field_width">
+            <input matInput placeholder="Adres email" formControlName="email" [(ngModel)]="credentials.login">
+            <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
+              {{ getErrorEmail() }}
+            </mat-error>
+          </mat-form-field>
 
-            <mat-form-field class="mat_form_field_width">
-              <input matInput placeholder="Password">
-            </mat-form-field>
+          <mat-form-field class="mat_form_field_width">
+            <input matInput placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
+            <mat-hint>Wybierz hasło składające się z co najmniej ośmiu znaków, jednej dużej litery i jednej cyfry.</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
+              {{ getErrorPassword() }}
+            </mat-error>
+          </mat-form-field>
 
-            <mat-form-field class="mat_form_field_width">
-                <input matInput placeholder="Confirm Password">
-              </mat-form-field>
-          </mat-card-content>
-          <button mat-stroked-button color="accent" class="btn-block button_login">Log in</button>
+          <mat-form-field class="mat_form_field_width">
+            <input matInput placeholder="Potwierdz hasło" formControlName="confirmPassword">
+            <mat-hint>Hasło musi być identyczne.</mat-hint>
+            <mat-error *ngIf="!formGroup.controls['confirmPassword'].valid && formGroup.controls['confirmPassword'].touched">
+              <!-- jakiś błąd trzeba zwrócic -->
+            </mat-error>
+          </mat-form-field>
+
+          <div class="form-element">
+            <button mat-raised-button color="primary" type="submit" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="register()">Zaloguj się</button>
+          </div>
         </form>
       </mat-card>
     </div>
