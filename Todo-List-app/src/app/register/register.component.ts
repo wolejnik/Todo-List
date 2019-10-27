@@ -4,6 +4,7 @@ import { User } from 'firebase';
 import { AuthentificationService } from '../shared/auth/authentification.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PasswordValidation } from './password-validation';
 
 @Component({
   selector: 'app-login',
@@ -27,16 +28,17 @@ export class RegisterComponent implements OnInit {
     private router: Router,
     private authService: AuthentificationService,
     private formBuilder: FormBuilder
-  ) {
+  ) { }
 
+  ngOnInit() {
     this.formGroup = this.formBuilder.group({
       'email' : [null, [Validators.required, Validators.pattern(this.emailregex)]],
       'password' : [null, [Validators.required, this.checkPassword]],
       'confirmPassword' : [null, [Validators.required]]
-     });
-  }
-
-  ngOnInit() { }
+     }, {
+      validator: PasswordValidation.MatchPassword
+    });
+   }
 
   register() {
     this.authService.register(this.credentials)

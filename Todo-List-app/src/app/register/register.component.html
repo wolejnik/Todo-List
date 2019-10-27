@@ -13,23 +13,23 @@
           </mat-form-field>
 
           <mat-form-field class="mat_form_field_width">
-            <input matInput placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
+            <input type="password" matInput placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
             <mat-hint>Wybierz hasło składające się z co najmniej ośmiu znaków, jednej dużej litery i jednej cyfry.</mat-hint>
             <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
               {{ getErrorPassword() }}
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="mat_form_field_width">
-            <input matInput placeholder="Potwierdz hasło" formControlName="confirmPassword">
-            <mat-hint>Hasło musi być identyczne.</mat-hint>
-            <mat-error *ngIf="!formGroup.controls['confirmPassword'].valid && formGroup.controls['confirmPassword'].touched">
-              <!-- jakiś błąd trzeba zwrócic -->
-            </mat-error>
+
+
+          <mat-form-field class="mat_form_field_width_confirmPassword">
+            <input type="password" matInput placeholder="Potwierdz wpisane hasło" formControlName="confirmPassword">
+            <mat-hint>Hasło musi być takie same jak wyżej.</mat-hint>
+            <mat-error *ngIf="formGroup.controls['confirmPassword'].pristine || formGroup.controls['confirmPassword'].errors?.MatchPassword">Hasła nie są takie same.</mat-error>
           </mat-form-field>
 
           <div class="form-element">
-            <button mat-raised-button color="primary" type="submit" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="register()">Zaloguj się</button>
+            <button mat-raised-button color="warn" type="submit" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="register()">Stwórz konto</button>
           </div>
         </form>
       </mat-card>
