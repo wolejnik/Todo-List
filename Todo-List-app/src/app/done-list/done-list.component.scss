@@ -1,0 +1,17 @@
+.task {
+  display: flex;
+  margin-top: 1rem;
+  &_desc {
+    justify-content: left;
+    // width: 15rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  &_options {
+    margin-left: 1rem;
+    justify-content: right;
+    button {
+      margin-left: .5rem;
+    }
+  }
+}

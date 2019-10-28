@@ -23,6 +23,16 @@
       &_button {
         margin-top: 6.5rem;
         margin-left: 4.5rem;
+        width: 12rem;
+        height: 3.5rem;
+        background: #28a745;
+        &:focus {
+          outline: transparent;
+        }
+      }
+      &_row {
+        display: flex;
+        flex-wrap: wrap;
       }
     }
   }
