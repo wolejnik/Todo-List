@@ -6,13 +6,13 @@
         <ng-container *ngIf="task.isToDo == true" >
           <li>
             <div class="task">
-              <div class="task_desc col-6">
+              <div class="task_desc col-5">
                 {{task.desc}}
               </div>
-              <div class="task_options col-5">
-                <button (click)="onDelete(task.taskID)">Usuń</button>
-                <button (click)="updateTaskToDone(task.taskID)">Zrobione</button>
-                <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
+              <div class="task_options col-6">
+                <button mat-raised-button class="task_options_button" color="green" (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+                <button mat-raised-button color="primary" (click)="updateTaskToProgress(task.taskID)">W trakcie</button>
+                <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
               </div>
             </div>
           </li>
@@ -21,3 +21,6 @@
     </ng-container>
   </ul>
 </div>
+
+
+

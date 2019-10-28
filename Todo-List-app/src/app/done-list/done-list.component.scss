@@ -15,6 +15,12 @@ ul {
   &_options {
     margin-left: 1rem;
     justify-content: right;
+    &_button {
+      background: #28a745;
+      &:focus {
+        outline: transparent;
+      }
+    }
     button {
       margin-left: .5rem;
     }

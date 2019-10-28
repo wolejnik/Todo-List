@@ -10,8 +10,8 @@
                 {{task.desc}}
               </div>
               <div class="task_options col-4">
-                <button (click)="onDelete(task.taskID)">Usuń</button>
-                <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
+                <button mat-raised-button color="primary" (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
+                <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
               </div>
             </div>
           </li>
