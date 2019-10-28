@@ -1,9 +1,30 @@
-.container {
-  flex-direction: column;
-}
+// .container {
+//   flex-direction: column;
+// }
 
-.container {
-  margin-top: 8.25rem;
-  color: black;
+// .container {
+//   margin-top: 8.25rem;
+//   color: black;
+// }
+
+.container-fluid {
+  width: 100vw;
+  height: auto;
+  background: #2c3e50;
+  background: linear-gradient(#091540, #7692FF);
+  padding: 0;
+  color: whitesmoke;
+  .homepage {
+    &_background {
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      &_button {
+        margin-top: 6.5rem;
+        margin-left: 4.5rem;
+      }
+    }
+  }
 }
 

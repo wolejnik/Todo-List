@@ -33,6 +33,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AddNewTaskPopupComponent } from './dashboard/add-new-task-popup/add-new-task-popup.component';
 
 
 
@@ -48,8 +50,12 @@ import {MatInputModule} from '@angular/material/input';
       TaskEditComponent,
       TodoListComponent,
       DashboardComponent,
-      LoginComponent
-   ],
+      LoginComponent,
+      AddNewTaskPopupComponent
+    ],
+    entryComponents: [
+      AddNewTaskPopupComponent
+    ],
    imports: [
       BrowserModule,
       FormsModule,
@@ -62,7 +68,8 @@ import {MatInputModule} from '@angular/material/input';
       ReactiveFormsModule,
       MatCardModule,
       MatFormFieldModule,
-      MatInputModule
+      MatInputModule,
+      MatDialogModule
    ],
    providers: [
     AuthentificationService,

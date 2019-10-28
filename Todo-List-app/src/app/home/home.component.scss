@@ -22,10 +22,14 @@
       background-size: cover;
       background-repeat: no-repeat;
       &_logo {
+        display: flex;
+        flex-wrap: wrap;
         padding-top: 8rem;
       }
       &_title {
         padding-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
         h1 {
           font-size: 3.5rem;
           font-weight: 600;
@@ -35,22 +39,28 @@
         }
       }
       &_content {
+        display: flex;
+        flex-wrap: wrap;
         font-size: 2rem;
         font-weight: 500;
         color: black;
         text-align: center;
-
+        justify-content: space-around;
       }
       &_button{
         width: 20rem;
         height: 5rem;
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin-top: 1rem;
         margin-right: 2rem;
-
+        border-color: #28a745;
+        color: black;
         justify-content: center;
         border-width: medium;
         text-align: center;
+        &:hover {
+          background-color: #28a745;
+        }
       }
     }
 
