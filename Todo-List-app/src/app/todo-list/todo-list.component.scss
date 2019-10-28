@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task {
+  display: flex;
+  margin-top: 1rem;
+  &_desc {
+    justify-content: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  &_options {
+    margin-left: 1rem;
+    justify-content: right;
+    margin: 0;
+    button {
+      margin-left: .5rem;
+    }
+  }
+}

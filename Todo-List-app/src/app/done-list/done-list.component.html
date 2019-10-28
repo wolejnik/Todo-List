@@ -1,25 +1,22 @@
 <div class="list_task_Done">
-    Zrobiona zadania
-    <ul>
-      <ng-container *ngFor="let task of todoTasks">
-        <ng-container *ngIf="task.userID == user.uid">
-          <ng-container *ngIf="task.isDone == true" >
-            <li>
-              <!-- {{task.desc}}
-              <button (click)="onDelete(task.taskID)">Usuń</button>
-              <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button> -->
-              <div class="task">
-                <div class="task_desc col-7">
-                  {{task.desc}}
-                </div>
-                <div class="task_options col-4">
-                  <button (click)="onDelete(task.taskID)">Usuń</button>
-                  <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
-                </div>
+  Zrobiona zadania
+  <ul>
+    <ng-container *ngFor="let task of todoTasks">
+      <ng-container *ngIf="task.userID == user.uid">
+        <ng-container *ngIf="task.isDone == true" >
+          <li>
+            <div class="task">
+              <div class="task_desc col-7">
+                {{task.desc}}
               </div>
-            </li>
-          </ng-container>
+              <div class="task_options col-4">
+                <button (click)="onDelete(task.taskID)">Usuń</button>
+                <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
+              </div>
+            </div>
+          </li>
         </ng-container>
       </ng-container>
-    </ul>
-  </div>
+    </ng-container>
+  </ul>
+</div>

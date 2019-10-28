@@ -1,23 +1,23 @@
 <div class="list_task_todo">
   Lista zadań
-  <div class="col-8">
-    <ul>
-      <ng-container *ngFor="let task of todoTasks">
-        <ng-container *ngIf="task.userID == user.uid" >
-          <ng-container *ngIf="task.isToDo == true" >
-            <li class="col-12">
-              <a class="col-8"
-              [class.selected]="task === selectedTask"
-              (click)="onSelect(task)"
-              [routerLink]="['/task', task.taskID]">{{task.desc}}
-            </a>
-              <button (click)="onDelete(task.taskID)">Usuń</button>
-              <button (click)="updateTaskToDone(task.taskID)">Zrobione</button>
-              <button (click)="updateTaskToToDo(task.taskID)">Cofnij</button>
-            </li>
-          </ng-container>
+  <ul>
+    <ng-container *ngFor="let task of todoTasks">
+      <ng-container *ngIf="task.userID == user.uid" >
+        <ng-container *ngIf="task.isToDo == true" >
+          <li>
+            <div class="task">
+              <div class="task_desc col-6">
+                {{task.desc}}
+              </div>
+              <div class="task_options col-5">
+                <button (click)="onDelete(task.taskID)">Usuń</button>
+                <button (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+                <button (click)="updateTaskToProgress(task.taskID)">Cofnij</button>
+              </div>
+            </div>
+          </li>
         </ng-container>
       </ng-container>
-    </ul>
-  </div>
+    </ng-container>
+  </ul>
 </div>
