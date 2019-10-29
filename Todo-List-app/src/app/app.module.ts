@@ -13,7 +13,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeComponent } from './home/home.component';
-import { AddNewTaskComponent } from './add-new-task/add-new-task.component';
 import { DoneListComponent } from './done-list/done-list.component';
 import { InProgressListComponent } from './in-progress-list/in-progress-list.component';
 import { RegisterComponent } from './register/register.component';
@@ -42,7 +41,6 @@ import { AddNewTaskPopupComponent } from './dashboard/add-new-task-popup/add-new
    declarations: [
       AppComponent,
       HomeComponent,
-      AddNewTaskComponent,
       DoneListComponent,
       InProgressListComponent,
       RegisterComponent,
