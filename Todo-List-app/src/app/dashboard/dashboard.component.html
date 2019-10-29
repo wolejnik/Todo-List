@@ -4,12 +4,15 @@
       <button mat-stroked-button color="green"class="homepage_background_button" (click)="openDialog()">Add new task</button>
       <div class="homepage_background_row">
         <div class="col-4">
+          <h2>Zadania do wykonania</h2>
           <app-todo-list></app-todo-list>
         </div>
         <div class="col-4">
+          <h2>Zadania w trakcie wykonywania</h2>
           <app-in-progress-list></app-in-progress-list>
         </div>
         <div class="col-4">
+          <h2>Zadania zrobione</h2>
           <app-done-list></app-done-list>
         </div>
       </div>

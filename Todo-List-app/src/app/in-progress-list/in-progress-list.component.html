@@ -1,29 +1,28 @@
 <div class="list_task_inProgress">
-    W trkacie wykonywania
-    <ul>
-      <ng-container *ngFor="let task of todoTasks">
-        <ng-container *ngIf="task.userID == user.uid" >
-          <ng-container *ngIf="task.isProgress == true" >
-            <li>
-              <div class="task">
-                <div class="task_desc col-5">
-                  <a
-                  [class.selected]="task === selectedTask"
-                  (click)="onSelect(task)"
-                  [routerLink]="['/task', task.taskID]">{{task.desc}}
-                  </a>
-                </div>
-                <div class="task_options col-6">
-                  <button mat-raised-button class="task_options_button" color="green" (click)="updateTaskToDone(task.taskID)">Zrobione</button>
-                  <button mat-raised-button color="primary" (click)="updateTaskToToDo(task.taskID)">Cofnij</button>
-                  <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
-                </div>
+  <ul>
+    <ng-container *ngFor="let task of todoTasks">
+      <ng-container *ngIf="task.userID == user.uid" >
+        <ng-container *ngIf="task.isProgress == true" >
+          <li>
+            <div class="task">
+              <div class="task_desc col-5">
+                <a
+                [class.selected]="task === selectedTask"
+                (click)="onSelect(task)"
+                [routerLink]="['/task', task.taskID]">{{task.desc}}
+                </a>
               </div>
-            </li>
-          </ng-container>
+              <div class="task_options col-6">
+                <button mat-raised-button class="task_options_button" color="green" (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+                <button mat-raised-button color="primary" (click)="updateTaskToToDo(task.taskID)">Cofnij</button>
+                <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
+              </div>
+            </div>
+          </li>
         </ng-container>
       </ng-container>
-    </ul>
-  </div>
+    </ng-container>
+  </ul>
+</div>
 
 
