@@ -1,4 +1,4 @@
-<ng-container *ngFor="let task of todoTasks">
+<!-- <ng-container *ngFor="let task of todoTasks">
     <div *ngIf="task.taskID == idUrl">
       <p>{{task.taskID}}</p>
       <p>{{task.userID}}</p>
@@ -47,4 +47,61 @@
     <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
     <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
   </div>
-  </div>
+  </div> -->
+
+  <div class="container-fluid">
+      <div class="homepage">
+        <div class="homepage_background">
+            <ng-container *ngFor="let task of todoTasks">
+                <div *ngIf="task.taskID == idUrl">
+                  <p>{{task.taskID}}</p>
+                  <p>{{task.userID}}</p>
+                  <p>{{task.desc}}</p>
+                  <p>{{task.dataCreated}}</p>
+                  <p>{{task.dataEnd}}</p>
+                  <p>{{task.duration}}</p>
+                  <p>{{task.isToDo}}</p>
+                  <p>{{task.isProgress}}</p>
+                  <p>{{task.isDone}}</p>
+                  <a
+                  [class.selected]="task === selectedTask"
+                  (click)="onSelect(task)"
+                  [routerLink]="['/task', task.taskID, 'edit']">Edit</a>
+                  <a [routerLink]="['/']">Timer</a>
+                </div>
+
+              </ng-container>
+
+
+              <button (click)='startTimer()'>Start Timer</button>
+              <button (click)='pauseTimer()'>Pause</button>
+              <button (click)='resetTimer()'>Reset</button>
+
+
+              <p>{{time}}</p>
+
+              <div *ngIf="time > 0">
+              <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
+              {{tmpTime}} Seconds
+              </p>
+              <div *ngIf="tmpTime >= 0 && minutes > 0 && hour == 0 && day == 0">
+                <div [ngPlural]="minutes">
+                <ng-template ngPluralCase="=1">{{minutes}} Minute, {{tmpTime}} Seconds</ng-template>
+                <ng-template ngPluralCase="other">{{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+              </div>
+              </div>
+              <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour > 0 && day == 0">
+                  <div [ngPlural]="hour">
+                <ng-template ngPluralCase="=1">{{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                <ng-template ngPluralCase="other">{{hour}} Hours, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+              </div>
+              </div>
+              <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour >= 0 && day > 0">
+                    <div [ngPlural]="day">
+                <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+              </div>
+              </div>
+        </div>
+      </div>
+    </div>
