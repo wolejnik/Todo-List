@@ -21,6 +21,7 @@ export class TaskDetailsComponent implements OnInit {
   minutes: number;
   seconds: number;
   interval;
+  start = true;
 
 
   constructor(
@@ -49,8 +50,10 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   startTimer(timeCurrent: number) {
-    this.tmpTime = timeCurrent;
-    console.log(this.time);
+    if (this.start) {
+      this.time = timeCurrent;
+      this.start = false;
+    }
     this.interval = setInterval(() => {
     this.time++;
     this.tmpTime = this.time;
@@ -60,7 +63,7 @@ export class TaskDetailsComponent implements OnInit {
     this.tmpTime -= this.hour * 3600;
     this.minutes = Math.floor(this.tmpTime / 60);
     this.tmpTime -= this.minutes * 60;
-    }, 1000);
+    }, 100);
   }
 
   pauseTimer() {
@@ -69,8 +72,7 @@ export class TaskDetailsComponent implements OnInit {
   }
 
   saveTime() {
-    // this.taskService.getCurrentTime(this.idUrl);
-    this.taskService.updateDuration(this.idUrl, this.tmpTime);
+    this.taskService.updateDuration(this.idUrl, this.time);
   }
 
 }
