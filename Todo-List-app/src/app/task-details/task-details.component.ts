@@ -48,7 +48,9 @@ export class TaskDetailsComponent implements OnInit {
     this.selectedTask = t;
   }
 
-  startTimer() {
+  startTimer(timeCurrent: number) {
+    this.tmpTime = timeCurrent;
+    console.log(this.time);
     this.interval = setInterval(() => {
     this.time++;
     this.tmpTime = this.time;
@@ -63,10 +65,12 @@ export class TaskDetailsComponent implements OnInit {
 
   pauseTimer() {
     clearInterval(this.interval);
+    this.saveTime();
   }
 
-  resetTimer() {
-    this.time = 0;
+  saveTime() {
+    // this.taskService.getCurrentTime(this.idUrl);
+    this.taskService.updateDuration(this.idUrl, this.tmpTime);
   }
 
 }

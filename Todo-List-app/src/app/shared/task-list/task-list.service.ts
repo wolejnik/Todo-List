@@ -14,6 +14,10 @@ getTasks() {
   return this.firestore.collection('Tasks').snapshotChanges();
 }
 
+getCurrentTime(id: string) {
+  // this.firestore.doc('Tasks/' + id + '/duration').get();
+}
+
 deleteTask(id: string) {
   if (confirm('Are you sure to delete this record?')) {
     this.firestore.doc('Tasks/' + id).delete();
@@ -34,6 +38,11 @@ updateTaskToToDo(id: string) {
 
 updateTaskDesc(id: string, descNew: string) {
   this.firestore.doc('Tasks/' + id).update({desc: descNew });
+}
+
+
+updateDuration(id: string, time: number) {
+  this.firestore.doc('Tasks/' + id).update({duration: time });
 }
 
 }

@@ -23,6 +23,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { AuthentificationService } from './shared/auth/authentification.service';
 import { TaskListService } from './shared/task-list/task-list.service';
+import { AddNewTaskPopupComponent } from './dashboard/add-new-task-popup/add-new-task-popup.component';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,7 +34,6 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
-import { AddNewTaskPopupComponent } from './dashboard/add-new-task-popup/add-new-task-popup.component';
 
 
 

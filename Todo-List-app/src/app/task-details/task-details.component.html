@@ -68,17 +68,18 @@
                   (click)="onSelect(task)"
                   [routerLink]="['/task', task.taskID, 'edit']">Edit</a>
                   <a [routerLink]="['/']">Timer</a>
+                  <button (click)='startTimer(task.duration)'>Start Timer</button>
+                  <button (click)='pauseTimer()'>Stop</button>
                 </div>
+
+
 
               </ng-container>
 
 
-              <button (click)='startTimer()'>Start Timer</button>
-              <button (click)='pauseTimer()'>Pause</button>
-              <button (click)='resetTimer()'>Reset</button>
-
-
-              <p>{{time}}</p>
+              <!-- <button (click)='startTimer(task.duration)'>Start Timer</button>
+              <button (click)='pauseTimer()'>Stop</button>
+              <button (click)='resetTimer()'>Reset</button> -->
 
               <div *ngIf="time > 0">
               <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
