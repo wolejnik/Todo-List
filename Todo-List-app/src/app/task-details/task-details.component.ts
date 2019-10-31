@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task';
 import { ActivatedRoute } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
 import { TaskListService } from '../shared/task-list/task-list.service';
+import { ChangeDescTaskPopupComponent } from './change-desc-task-popup/change-desc-task-popup.component';
 
 @Component({
   selector: 'app-task-details',
@@ -26,7 +28,8 @@ export class TaskDetailsComponent implements OnInit {
 
   constructor(
     private taskService: TaskListService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -73,6 +76,16 @@ export class TaskDetailsComponent implements OnInit {
 
   saveTime() {
     this.taskService.updateDuration(this.idUrl, this.time);
+  }
+
+  openDialog(id: number, desc: string) {
+    this.dialog.open(ChangeDescTaskPopupComponent, {
+      width: '31.25rem',
+      data: {
+        idTask: id,
+        descTask: desc
+       }
+    });
   }
 
 }

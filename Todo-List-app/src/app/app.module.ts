@@ -34,6 +34,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-popup/change-desc-task-popup.component';
 
 
 
@@ -49,10 +50,12 @@ import {MatDialogModule} from '@angular/material/dialog';
       TodoListComponent,
       DashboardComponent,
       LoginComponent,
-      AddNewTaskPopupComponent
+      AddNewTaskPopupComponent,
+      ChangeDescTaskPopupComponent
     ],
     entryComponents: [
-      AddNewTaskPopupComponent
+      AddNewTaskPopupComponent,
+      ChangeDescTaskPopupComponent
     ],
    imports: [
       BrowserModule,
