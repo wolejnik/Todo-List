@@ -7,19 +7,18 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TaskListService } from 'src/app/shared/task-list/task-list.service';
 
-
 @Component({
-  selector: 'app-change-desc-task-popup',
-  templateUrl: './change-desc-task-popup.component.html',
-  styleUrls: ['./change-desc-task-popup.component.scss']
+  selector: 'app-duration-popup',
+  templateUrl: './duration-popup.component.html',
+  styleUrls: ['./duration-popup.component.scss']
 })
-export class ChangeDescTaskPopupComponent implements OnInit {
+export class DurationPopupComponent implements OnInit {
 
   user: User;
   descTask: string;
 
   constructor(
-      private dialogRef: MatDialogRef<ChangeDescTaskPopupComponent>,
+      private dialogRef: MatDialogRef<DurationPopupComponent>,
       private fireAuth: AngularFireAuth,
       private firestore: AngularFirestore,
       private taskService: TaskListService,

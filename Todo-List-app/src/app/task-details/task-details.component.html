@@ -13,9 +13,12 @@
             </p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
             <p>Data zakończenia : {{task.dataEnd}}</p>
-            <p>Czas trwania : {{task.duration}}
+            <p>Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
               <button (click)='startTimer(task.duration)'>Start Timer</button>
               <button (click)='pauseTimer()'>Stop</button>
+              <button [class.selected]="task === selectedTask"
+              (click)="onSelect(task)"
+              (click)="openDialog2(task.taskID, task.desc)">Open timer</button>
             </p>
           </div>
         </ng-container>

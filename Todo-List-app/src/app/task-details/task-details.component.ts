@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { ChangeDescTaskPopupComponent } from './change-desc-task-popup/change-desc-task-popup.component';
+import { DurationPopupComponent } from './duration-popup/duration-popup.component';
 
 @Component({
   selector: 'app-task-details',
@@ -35,6 +36,7 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit() {
     this.init();
     this.idUrl = String(this.route.snapshot.paramMap.get('id'));
+
     }
 
   async init() {
@@ -80,6 +82,16 @@ export class TaskDetailsComponent implements OnInit {
 
   openDialog(id: number, desc: string) {
     this.dialog.open(ChangeDescTaskPopupComponent, {
+      width: '31.25rem',
+      data: {
+        idTask: id,
+        descTask: desc
+       }
+    });
+  }
+
+  openDialog2(id: number, desc: string) {
+    this.dialog.open(DurationPopupComponent, {
       width: '31.25rem',
       data: {
         idTask: id,
