@@ -18,7 +18,7 @@
               <button (click)='pauseTimer()'>Stop</button>
               <button [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
-              (click)="openDialog2(task.taskID, task.desc)">Open timer</button>
+              (click)="openDialog2(task.taskID, task.duration)">Open timer</button>
             </p>
           </div>
         </ng-container>

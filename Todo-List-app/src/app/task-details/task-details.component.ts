@@ -36,7 +36,7 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit() {
     this.init();
     this.idUrl = String(this.route.snapshot.paramMap.get('id'));
-
+    this.startTimer();
     }
 
   async init() {
@@ -54,7 +54,7 @@ export class TaskDetailsComponent implements OnInit {
     this.selectedTask = t;
   }
 
-  startTimer(timeCurrent: number) {
+  startTimer(timeCurrent?: number) {
     if (this.start) {
       this.time = timeCurrent;
       this.start = false;
@@ -90,12 +90,12 @@ export class TaskDetailsComponent implements OnInit {
     });
   }
 
-  openDialog2(id: number, desc: string) {
+  openDialog2(id: number, duration: number) {
     this.dialog.open(DurationPopupComponent, {
       width: '31.25rem',
       data: {
         idTask: id,
-        descTask: desc
+        timeTask: duration
        }
     });
   }

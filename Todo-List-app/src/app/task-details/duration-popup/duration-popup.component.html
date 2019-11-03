@@ -4,12 +4,33 @@
     </div>
     <div class="popup_message">
       <form #addNewTaskForm="ngForm" autocomplete="off" class="popup_message_form">
-        <mat-form-field class="popup_message_form_input">
-          <input matInput name="task" ngModel required #task="ngModel" placeholder="Change description" [(ngModel)]="data.descTask" required>
-        </mat-form-field>
+          <div *ngIf="time > 0">
+              <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
+                {{tmpTime}} Seconds
+              </p>
+              <div *ngIf="tmpTime >= 0 && minutes > 0 && hour == 0 && day == 0">
+                <div [ngPlural]="minutes">
+                  <ng-template ngPluralCase="=1">{{minutes}} Minute, {{tmpTime}} Seconds</ng-template>
+                  <ng-template ngPluralCase="other">{{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                </div>
+              </div>
+              <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour > 0 && day == 0">
+                <div [ngPlural]="hour">
+                  <ng-template ngPluralCase="=1">{{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                  <ng-template ngPluralCase="other">{{hour}} Hours, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                </div>
+              </div>
+              <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour >= 0 && day > 0">
+                <div [ngPlural]="day">
+                  <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                  <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+                </div>
+              </div>
+            </div>
         <div class="popup_buttons">
           <button class="tieto_button cancel" (click)="closeDialog()">Cancel</button>
-          <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="onSubmit(addNewTaskForm)">Change</button>
+          <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="startTimer(123)">Start</button>
+          <button class="tieto_button cancel" (click)="pauseTimer()">Pause</button>
         </div>
       </form>
     </div>
