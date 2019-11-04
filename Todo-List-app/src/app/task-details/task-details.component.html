@@ -12,11 +12,11 @@
               (click)="openDialog(task.taskID, task.desc)">Edit</button>
             </p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
-            <p>Data zakończenia : {{task.dataEnd}}</p>
+            <p *ngIf="task.dataEnd !== 0" >Data zakończenia : {{task.dataEnd}}</p>
             <p>Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
               <button [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
-              (click)="openDialog2(task.taskID, task.duration)">Open timer</button>
+              (click)="openDialog2(task.taskID, task.duration, task.desc)">Open timer</button>
             </p>
           </div>
         </ng-container>

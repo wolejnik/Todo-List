@@ -90,12 +90,13 @@ export class TaskDetailsComponent implements OnInit {
     });
   }
 
-  openDialog2(id: number, duration: number) {
+  openDialog2(id: number, duration: number, desc: string) {
     this.dialog.open(DurationPopupComponent, {
       width: '31.25rem',
       data: {
         idTask: id,
-        timeTask: duration
+        timeTask: duration,
+        descTask: desc
        }
     });
   }

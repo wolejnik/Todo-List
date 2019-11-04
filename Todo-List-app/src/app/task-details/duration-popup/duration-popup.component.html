@@ -2,6 +2,9 @@
     <div class="popup_title">
       Duration time
     </div>
+    <div>
+      {{this.data.descTask}}
+    </div>
     <div class="popup_message">
       <form #addNewTaskForm="ngForm" autocomplete="off" class="popup_message_form">
           <div *ngIf="time > 0; else infoTimer">
