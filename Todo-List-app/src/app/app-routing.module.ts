@@ -6,8 +6,6 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
-import { TaskEditComponent } from './task-edit/task-edit.component';
-
 
 const routes: Routes = [
   {
@@ -33,10 +31,6 @@ const routes: Routes = [
   {
     path: 'task/:id',
     component: TaskDetailsComponent
-  },
-  {
-    path: 'task/:id/edit',
-    component: TaskEditComponent
   }
 ];
 
