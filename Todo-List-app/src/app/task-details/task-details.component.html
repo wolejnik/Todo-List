@@ -6,42 +6,24 @@
         <ng-container *ngFor="let task of todoTasks">
 
           <div *ngIf="task.taskID == idUrl">
-            <p>Opis zadania : {{task.desc}}
-              <button [class.selected]="task === selectedTask"
+            <p  style="display: flex; justify-content: space-between;">Opis zadania : {{task.desc}}
+              <button
+              mat-raised-button class="task_options_button" color="green"
+              [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
               (click)="openDialog(task.taskID, task.desc)">Edit</button>
             </p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
-            <p>Data zakończenia : {{task.dataEnd}}</p>
-            <p>Czas trwania : {{task.duration}}
-              <button (click)='startTimer(task.duration)'>Start Timer</button>
-              <button (click)='pauseTimer()'>Stop</button>
+            <p *ngIf="task.dataEnd !== 0" >Data zakończenia : {{task.dataEnd}}</p>
+            <p  style="display: flex; justify-content: space-between;">Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
+              <button
+              mat-raised-button class="task_options_button" color="green"
+              [class.selected]="task === selectedTask"
+              (click)="onSelect(task)"
+              (click)="openDialog2(task.taskID, task.duration, task.desc)">Open timer</button>
             </p>
           </div>
         </ng-container>
-      </div>
-      <div *ngIf="time > 0">
-        <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
-          {{tmpTime}} Seconds
-        </p>
-        <div *ngIf="tmpTime >= 0 && minutes > 0 && hour == 0 && day == 0">
-          <div [ngPlural]="minutes">
-            <ng-template ngPluralCase="=1">{{minutes}} Minute, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
-        <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour > 0 && day == 0">
-          <div [ngPlural]="hour">
-            <ng-template ngPluralCase="=1">{{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{hour}} Hours, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
-        <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour >= 0 && day > 0">
-          <div [ngPlural]="day">
-            <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
       </div>
     </div>
   </div>

@@ -41,7 +41,6 @@ export class ChangeDescTaskPopupComponent implements OnInit {
 
     onSubmit(addNewTaskForm: NgForm) {
       this.taskService.updateTaskDesc(this.data.idTask, addNewTaskForm.controls.task.value);
-      this.router.navigate(['/dashboard']);
       this.resetForm(addNewTaskForm);
       this.dialogRef.close();
     }

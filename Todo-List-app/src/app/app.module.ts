@@ -35,6 +35,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-popup/change-desc-task-popup.component';
+import { DaysHoursMinutesSeconds } from './pipes/DaysHoursMinutesSeconds.pipe';
+import { DurationPopupComponent } from './task-details/duration-popup/duration-popup.component';
 
 
 
@@ -51,11 +53,14 @@ import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-po
       DashboardComponent,
       LoginComponent,
       AddNewTaskPopupComponent,
-      ChangeDescTaskPopupComponent
+      ChangeDescTaskPopupComponent,
+      DaysHoursMinutesSeconds,
+      DurationPopupComponent
     ],
     entryComponents: [
       AddNewTaskPopupComponent,
-      ChangeDescTaskPopupComponent
+      ChangeDescTaskPopupComponent,
+      DurationPopupComponent
     ],
    imports: [
       BrowserModule,
