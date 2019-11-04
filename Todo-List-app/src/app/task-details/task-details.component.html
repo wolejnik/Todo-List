@@ -14,37 +14,12 @@
             <p>Data utworzenia : {{task.dataCreated}}</p>
             <p>Data zakończenia : {{task.dataEnd}}</p>
             <p>Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
-              <button (click)='startTimer(task.duration)'>Start Timer</button>
-              <button (click)='pauseTimer()'>Stop</button>
               <button [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
               (click)="openDialog2(task.taskID, task.duration)">Open timer</button>
             </p>
           </div>
         </ng-container>
-      </div>
-      <div *ngIf="time > 0">
-        <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
-          {{tmpTime}} Seconds
-        </p>
-        <div *ngIf="tmpTime >= 0 && minutes > 0 && hour == 0 && day == 0">
-          <div [ngPlural]="minutes">
-            <ng-template ngPluralCase="=1">{{minutes}} Minute, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
-        <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour > 0 && day == 0">
-          <div [ngPlural]="hour">
-            <ng-template ngPluralCase="=1">{{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{hour}} Hours, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
-        <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour >= 0 && day > 0">
-          <div [ngPlural]="day">
-            <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-            <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          </div>
-        </div>
       </div>
     </div>
   </div>

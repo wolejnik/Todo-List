@@ -4,7 +4,7 @@
     </div>
     <div class="popup_message">
       <form #addNewTaskForm="ngForm" autocomplete="off" class="popup_message_form">
-          <div *ngIf="time > 0">
+          <div *ngIf="time > 0; else infoTimer">
               <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
                 {{tmpTime}} Seconds
               </p>
@@ -27,9 +27,12 @@
                 </div>
               </div>
             </div>
+            <ng-template #infoTimer>
+              Wciśnij start, aby rozpocząć zadanie.
+            </ng-template>
         <div class="popup_buttons">
           <button class="tieto_button cancel" (click)="closeDialog()">Cancel</button>
-          <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="startTimer(123)">Start</button>
+          <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="startTimer(this.data.timeTask)">Start</button>
           <button class="tieto_button cancel" (click)="pauseTimer()">Pause</button>
         </div>
       </form>
