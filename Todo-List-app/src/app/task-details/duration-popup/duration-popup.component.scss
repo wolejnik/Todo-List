@@ -7,19 +7,20 @@
     color: #333333;
     opacity: 1;
   }
+  &_desc {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.25rem;
+    letter-spacing: 0;
+  }
   &_message {
-    margin-top: 2rem;
-    text-align: left;
+    margin-top: .5rem;
+    text-align: center;
     font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0;
     color: #333333;
     opacity: 1;
-    &_form {
-      &_input {
-        width: 100%;
-      }
-    }
   }
   &_buttons {
     display: flex;
@@ -34,7 +35,7 @@
       font-weight: 400;
       width: 11.375rem;
       height: 2.875rem;
-      &.add {
+      &.start {
         background: #28a745;
         border-style: none;
         border-radius: .375rem;
@@ -48,6 +49,12 @@
         border-radius: .375rem;
         opacity: 1;
         color: #033333;
+      }
+      &.pause {
+        border-radius: .375rem;
+        opacity: 1;
+        color: #ffffff;
+        margin-left: 1.25rem;
       }
       &:focus {
         outline: transparent;

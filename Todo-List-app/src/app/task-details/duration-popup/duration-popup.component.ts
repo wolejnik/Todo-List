@@ -34,10 +34,7 @@ export class DurationPopupComponent implements OnInit {
   constructor(
       private dialogRef: MatDialogRef<DurationPopupComponent>,
       private fireAuth: AngularFireAuth,
-      private firestore: AngularFirestore,
       private taskService: TaskListService,
-      private router: Router,
-      private route: ActivatedRoute,
       @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
       this.fireAuth.authState.subscribe(user => {
@@ -66,17 +63,6 @@ export class DurationPopupComponent implements OnInit {
       this.dialogRef.close();
     }
 
-    onSubmit(addNewTaskForm: NgForm) {
-      this.taskService.updateTaskDesc(this.data.idTask, addNewTaskForm.controls.task.value);
-      this.resetForm(addNewTaskForm);
-      this.dialogRef.close();
-    }
-
-    resetForm(addNewTaskForm?: NgForm) {
-      if (addNewTaskForm != null) {
-        addNewTaskForm.resetForm();
-      }
-    }
 
     startTimer(timeCurrent: number) {
       if (this.start) {
