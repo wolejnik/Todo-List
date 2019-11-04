@@ -6,15 +6,19 @@
         <ng-container *ngFor="let task of todoTasks">
 
           <div *ngIf="task.taskID == idUrl">
-            <p>Opis zadania : {{task.desc}}
-              <button [class.selected]="task === selectedTask"
+            <p  style="display: flex; justify-content: space-between;">Opis zadania : {{task.desc}}
+              <button
+              mat-raised-button class="task_options_button" color="green"
+              [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
               (click)="openDialog(task.taskID, task.desc)">Edit</button>
             </p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
             <p *ngIf="task.dataEnd !== 0" >Data zakończenia : {{task.dataEnd}}</p>
-            <p>Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
-              <button [class.selected]="task === selectedTask"
+            <p  style="display: flex; justify-content: space-between;">Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
+              <button
+              mat-raised-button class="task_options_button" color="green"
+              [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
               (click)="openDialog2(task.taskID, task.duration, task.desc)">Open timer</button>
             </p>
