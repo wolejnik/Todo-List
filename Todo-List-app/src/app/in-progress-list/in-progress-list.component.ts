@@ -11,7 +11,7 @@ import { User } from 'firebase';
 })
 export class InProgressListComponent implements OnInit {
 
-  todoTasks: Task[];
+  inProgressTasks: Task[];
   user: User;
 
   selectedTask: Task;
@@ -31,7 +31,7 @@ export class InProgressListComponent implements OnInit {
 
   async init() {
     await this.taskService.getTasks().subscribe(t => {
-      this.todoTasks = t.map(item => {
+      this.inProgressTasks = t.map(item => {
         return {
           taskID: item.payload.doc.id,
           ...item.payload.doc.data()

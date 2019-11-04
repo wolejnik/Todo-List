@@ -1,6 +1,6 @@
 <div class="list_task_done">
   <ul>
-    <ng-container *ngFor="let task of todoTasks">
+    <ng-container *ngFor="let task of doneTasks">
       <ng-container *ngIf="task.userID == user.uid">
         <ng-container *ngIf="task.isDone == true" >
           <li>
@@ -9,7 +9,6 @@
                 {{task.desc}}
               </div>
               <div class="task_options col-2">
-                <!-- <button mat-raised-button color="primary" (click)="updateTaskToProgress(task.taskID)">Cofnij</button> -->
                 <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
               </div>
             </div>

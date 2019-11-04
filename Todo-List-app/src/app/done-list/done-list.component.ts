@@ -11,7 +11,7 @@ import { User } from 'firebase';
 })
 export class DoneListComponent implements OnInit {
 
-  todoTasks: Task[];
+  doneTasks: Task[];
   user: User;
 
   constructor(
@@ -29,7 +29,7 @@ export class DoneListComponent implements OnInit {
 
   async init() {
     await this.taskService.getTasks().subscribe(t => {
-      this.todoTasks = t.map(item => {
+      this.doneTasks = t.map(item => {
         return {
           taskID: item.payload.doc.id,
           ...item.payload.doc.data()

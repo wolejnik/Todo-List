@@ -1,11 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { TaskListService } from 'src/app/shared/task-list/task-list.service';
 import { Task } from 'src/app/models/task';
 

@@ -17,7 +17,6 @@ import { DoneListComponent } from './done-list/done-list.component';
 import { InProgressListComponent } from './in-progress-list/in-progress-list.component';
 import { RegisterComponent } from './register/register.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
-import { TaskEditComponent } from './task-edit/task-edit.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -48,7 +47,6 @@ import { DurationPopupComponent } from './task-details/duration-popup/duration-p
       InProgressListComponent,
       RegisterComponent,
       TaskDetailsComponent,
-      TaskEditComponent,
       TodoListComponent,
       DashboardComponent,
       LoginComponent,

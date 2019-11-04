@@ -1,8 +1,8 @@
 <div class="container-fluid">
-    <div class="login_wrapper">
-      <mat-card class="login_wrapper_card">
-        <mat-card-header class="login_wrapper_card_header">
-          <mat-card-title class="login_wrapper_card_header_title">Sign up</mat-card-title>
+    <div class="register_wrapper">
+      <mat-card class="register_wrapper_card">
+        <mat-card-header class="register_wrapper_card_header">
+          <mat-card-title class="register_wrapper_card_header_title">Sign up</mat-card-title>
         </mat-card-header>
         <form [formGroup]="formGroup">
           <mat-form-field class="mat_form_field_width">
@@ -29,7 +29,7 @@
           </mat-form-field>
 
           <div class="form-element">
-            <button mat-raised-button color="warn" type="submit" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="register()">Stwórz konto</button>
+            <button mat-raised-button color="warn" type="submit" class="btn-block button_register" [disabled]="!formGroup.valid" (click)="register()">Stwórz konto</button>
           </div>
         </form>
       </mat-card>

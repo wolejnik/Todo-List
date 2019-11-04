@@ -1,6 +1,6 @@
 <div class="list_task_inProgress">
   <ul>
-    <ng-container *ngFor="let task of todoTasks">
+    <ng-container *ngFor="let task of inProgressTasks">
       <ng-container *ngIf="task.userID == user.uid" >
         <ng-container *ngIf="task.isProgress == true" >
           <li>

@@ -17,16 +17,6 @@ export class TaskDetailsComponent implements OnInit {
   idUrl: string;
   selectedTask: Task;
 
-  time = 0;
-  tmpTime: number;
-  day: number;
-  hour: number;
-  minutes: number;
-  seconds: number;
-  interval;
-  start = true;
-
-
   constructor(
     private taskService: TaskListService,
     private route: ActivatedRoute,
@@ -36,7 +26,6 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit() {
     this.init();
     this.idUrl = String(this.route.snapshot.paramMap.get('id'));
-    this.startTimer();
     }
 
   async init() {
@@ -52,32 +41,6 @@ export class TaskDetailsComponent implements OnInit {
 
   onSelect(t: Task): void {
     this.selectedTask = t;
-  }
-
-  startTimer(timeCurrent?: number) {
-    if (this.start) {
-      this.time = timeCurrent;
-      this.start = false;
-    }
-    this.interval = setInterval(() => {
-    this.time++;
-    this.tmpTime = this.time;
-    this.day = Math.floor(this.tmpTime / (3600 * 24));
-    this.tmpTime -= this.day * 3600 * 24;
-    this.hour = Math.floor(this.tmpTime / 3600);
-    this.tmpTime -= this.hour * 3600;
-    this.minutes = Math.floor(this.tmpTime / 60);
-    this.tmpTime -= this.minutes * 60;
-    }, 100);
-  }
-
-  pauseTimer() {
-    clearInterval(this.interval);
-    this.saveTime();
-  }
-
-  saveTime() {
-    this.taskService.updateDuration(this.idUrl, this.time);
   }
 
   openDialog(id: number, desc: string) {

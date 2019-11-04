@@ -1,10 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
 import { TaskListService } from 'src/app/shared/task-list/task-list.service';
 
 
@@ -21,9 +19,7 @@ export class ChangeDescTaskPopupComponent implements OnInit {
   constructor(
       private dialogRef: MatDialogRef<ChangeDescTaskPopupComponent>,
       private fireAuth: AngularFireAuth,
-      private firestore: AngularFirestore,
       private taskService: TaskListService,
-      private router: Router,
       @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
       this.fireAuth.authState.subscribe(user => {

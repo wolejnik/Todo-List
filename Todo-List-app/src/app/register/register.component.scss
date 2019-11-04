@@ -4,7 +4,7 @@
   padding: 0;
   color: whitesmoke;
 }
-.login_wrapper {
+.register_wrapper {
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -26,7 +26,7 @@
           border: none;
         }
       }
-      &.button_login {
+      &.button_register {
         padding: 0.5rem 0 0.5rem 0;
       }
     }
@@ -56,7 +56,7 @@
 }
 
 
-.button_login {
+.button_register {
   margin-top: 3rem;
   padding: 0.5rem 0 0.5rem 0;
 }
