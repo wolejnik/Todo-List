@@ -2,12 +2,12 @@
   <div class="details">
     <div class="details_background">
 
-      <div class="details_background_test ">
+      <div class="details_background_window">
         <ng-container *ngFor="let task of todoTasks">
 
-          <div *ngIf="task.taskID == idUrl">
+          <div class="details_background_window_items" *ngIf="task.taskID == idUrl">
             <p  style="display: flex; justify-content: space-between;">Opis zadania : {{task.desc}}
-              <button
+              <button id="btnEdit"
               mat-raised-button class="task_options_button" color="green"
               [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
@@ -16,7 +16,7 @@
             <p>Data utworzenia : {{task.dataCreated}}</p>
             <p *ngIf="task.dataEnd !== 0" >Data zakończenia : {{task.dataEnd}}</p>
             <p  style="display: flex; justify-content: space-between;">Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
-              <button
+              <button id="btnTimer"
               mat-raised-button class="task_options_button" color="green"
               [class.selected]="task === selectedTask"
               (click)="onSelect(task)"

@@ -15,7 +15,7 @@
       width: 100vw;
       background-size: cover;
       background-repeat: no-repeat;
-      &_test {
+      &_window {
         width: 40rem;
         max-height: 20rem;
         background: #949d96;
@@ -23,11 +23,23 @@
         border-radius: 0.5rem;
         overflow-y:auto;
 
-        div > p {
+        &_items > p {
         background: #c6ccc7;
         border-radius: 0.5rem;
         margin-bottom: 0.5rem;
         padding: 0.5rem;
+        & > #btnEdit {
+          background: #28a745;
+          &:focus {
+            outline: transparent;
+          }
+        }
+        & > #btnTimer {
+          background: #3f51b5;
+          &:focus {
+            outline: transparent;
+          }
+        }
         }
       }
     }
