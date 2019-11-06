@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { TaskListService } from 'src/app/shared/task-list/task-list.service';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class ChangeDescTaskPopupComponent implements OnInit {
       private fireAuth: AngularFireAuth,
       private taskService: TaskListService,
       @Inject(MAT_DIALOG_DATA) public data: any,
+      private toastr: ToastrService
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -38,6 +40,7 @@ export class ChangeDescTaskPopupComponent implements OnInit {
     onSubmit(addNewTaskForm: NgForm) {
       this.taskService.updateTaskDesc(this.data.idTask, addNewTaskForm.controls.task.value);
       this.resetForm(addNewTaskForm);
+      this.toastr.success('You changed description the task', 'Successful!');
       this.dialogRef.close();
     }
 

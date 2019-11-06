@@ -5,6 +5,7 @@ import { AuthentificationService } from '../shared/auth/authentification.service
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PasswordValidation } from './password-validation';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthentificationService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -44,10 +46,11 @@ export class RegisterComponent implements OnInit {
     this.authService.register(this.credentials)
     .then( () => {
       console.log('Created account');
+      this.toastr.success('Create new account', 'Successful!');
       this.router.navigate(['/login']);
     })
     .catch(
-      error => console.log(error.message)
+      error => this.toastr.error('Error!', error.message)
     );
   }
 

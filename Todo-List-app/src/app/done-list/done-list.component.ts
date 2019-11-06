@@ -3,6 +3,7 @@ import { Task } from '../models/task';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User } from 'firebase';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-done-list',
@@ -16,7 +17,8 @@ export class DoneListComponent implements OnInit {
 
   constructor(
     private taskService: TaskListService,
-    private fireAuth: AngularFireAuth
+    private fireAuth: AngularFireAuth,
+    private toastr: ToastrService
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -40,10 +42,7 @@ export class DoneListComponent implements OnInit {
 
   onDelete(taskID: string) {
     this.taskService.deleteTask(taskID);
-  }
-
-  updateTaskToProgress(taskID: string) {
-    this.taskService.updateTaskToProgress(taskID);
+    this.toastr.error('You deleted task', 'Successful!');
   }
 
 }

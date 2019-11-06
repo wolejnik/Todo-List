@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { User } from 'firebase';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-new-task-popup',
@@ -17,7 +18,9 @@ export class AddNewTaskPopupComponent implements OnInit {
   constructor(
       private dialogRef: MatDialogRef<AddNewTaskPopupComponent>,
       private fireAuth: AngularFireAuth,
-      private firestore: AngularFirestore
+      private firestore: AngularFirestore,
+      private toastr: ToastrService
+
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -44,6 +47,7 @@ export class AddNewTaskPopupComponent implements OnInit {
         isDone: false,
       });
       this.resetForm(addNewTaskForm);
+      this.toastr.success('You created new task to do', 'Successful!');
       this.dialogRef.close();
     }
 

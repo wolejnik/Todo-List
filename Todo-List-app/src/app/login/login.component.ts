@@ -4,6 +4,7 @@ import { User } from 'firebase';
 import { AuthentificationService } from '../shared/auth/authentification.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthentificationService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private toastr: ToastrService
   ) {
     this.formGroup = this.formBuilder.group({
      email : [null, [Validators.required, Validators.minLength(8), Validators.pattern(this.emailregex)]],
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.credentials)
     .then(() => {
+      this.toastr.success(`You logged as ${this.credentials.login}`, 'Successful!');
       this.router.navigate(['/dashboard']);
     })
     .catch(

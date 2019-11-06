@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TaskListService } from 'src/app/shared/task-list/task-list.service';
 import { Task } from 'src/app/models/task';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-duration-popup',
@@ -26,12 +27,14 @@ export class DurationPopupComponent implements OnInit {
   seconds: number;
   interval;
   start = true;
+  save = false;
 
   constructor(
       private dialogRef: MatDialogRef<DurationPopupComponent>,
       private fireAuth: AngularFireAuth,
       private taskService: TaskListService,
       @Inject(MAT_DIALOG_DATA) public data: any,
+      private toastr: ToastrService
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -57,10 +60,14 @@ export class DurationPopupComponent implements OnInit {
 
     closeDialog() {
       this.dialogRef.close();
+      if (!this.save) {
+        this.toastr.warning('the task time not saved', 'Warning!');
+      }
     }
 
 
     startTimer(timeCurrent: number) {
+      this.toastr.success('Start doing the task', 'Successful!');
       if (this.start) {
         this.time = timeCurrent;
         this.start = false;
@@ -79,6 +86,8 @@ export class DurationPopupComponent implements OnInit {
 
     pauseTimer() {
       clearInterval(this.interval);
+      this.save = true;
+      this.toastr.success('Save time the task', 'Successful!');
       this.saveTime();
     }
 

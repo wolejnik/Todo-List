@@ -27,6 +27,7 @@ import { AddNewTaskPopupComponent } from './dashboard/add-new-task-popup/add-new
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ToastrModule } from 'ngx-toastr';
 
 // angular material
 import {MatCardModule} from '@angular/material/card';
@@ -73,7 +74,10 @@ import { DurationPopupComponent } from './task-details/duration-popup/duration-p
       MatCardModule,
       MatFormFieldModule,
       MatInputModule,
-      MatDialogModule
+      MatDialogModule,
+      ToastrModule.forRoot({
+         positionClass: 'toast-bottom-right'
+      })
    ],
    providers: [
     AuthentificationService,

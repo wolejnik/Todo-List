@@ -3,6 +3,7 @@ import { Task } from '../models/task';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { User } from 'firebase';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-in-progress-list',
@@ -18,7 +19,8 @@ export class InProgressListComponent implements OnInit {
 
   constructor(
     private taskService: TaskListService,
-    private fireAuth: AngularFireAuth
+    private fireAuth: AngularFireAuth,
+    private toastr: ToastrService
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -42,14 +44,18 @@ export class InProgressListComponent implements OnInit {
 
   onDelete(taskID: string) {
     this.taskService.deleteTask(taskID);
+    this.toastr.error('You deleted task', 'Successful!');
   }
 
   updateTaskToDone(taskID: string) {
     this.taskService.updateTaskToDone(taskID);
+    this.toastr.success('Done task', 'Good job!');
+
   }
 
   updateTaskToToDo(taskID: string) {
     this.taskService.updateTaskToToDo(taskID);
+    this.toastr.warning('the task awaits completion', 'Successful!');
   }
 
   onSelect(t: Task): void {
