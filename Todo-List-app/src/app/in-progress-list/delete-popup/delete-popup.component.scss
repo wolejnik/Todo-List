@@ -1,0 +1,58 @@
+.popup {
+    &_title {
+      text-align: left;
+      font-weight: 300;
+      font-size: 1.5rem;
+      letter-spacing: 0;
+      color: #333333;
+      opacity: 1;
+    }
+    &_message {
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0;
+      color: #333333;
+      opacity: 1;
+      &_form {
+        &_input {
+          width: 100%;
+        }
+      }
+    }
+    &_buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 1.25rem;
+      padding-left: 0;
+      .tieto_button {
+        margin: 0 auto;
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 400;
+        width: 11.375rem;
+        height: 2.875rem;
+        &.delete {
+          background: #f44336;
+          border-style: none;
+          border-radius: .375rem;
+          opacity: 1;
+          color: #ffffff;
+          margin-left: 1.25rem;
+        }
+        &.cancel {
+          background: #eeeeee;
+          border: 1px solid #cccccc;
+          border-radius: .375rem;
+          opacity: 1;
+          color: #033333;
+        }
+        &:focus {
+          outline: transparent;
+        }
+      }
+    }
+  }
+  

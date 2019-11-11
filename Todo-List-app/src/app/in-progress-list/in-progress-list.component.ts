@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MatDialog } from '@angular/material/dialog';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { User } from 'firebase';
 import { ToastrService } from 'ngx-toastr';
+import { DeletePopupComponent } from './delete-popup/delete-popup.component';
 
 @Component({
   selector: 'app-in-progress-list',
@@ -20,7 +22,9 @@ export class InProgressListComponent implements OnInit {
   constructor(
     private taskService: TaskListService,
     private fireAuth: AngularFireAuth,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public dialog: MatDialog,
+
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -42,11 +46,6 @@ export class InProgressListComponent implements OnInit {
     });
   }
 
-  onDelete(taskID: string) {
-    this.taskService.deleteTask(taskID);
-    this.toastr.error('You deleted task', 'Successful!');
-  }
-
   updateTaskToDone(taskID: string) {
     this.taskService.updateTaskToDone(taskID);
     this.toastr.success('Done task', 'Good job!');
@@ -60,6 +59,16 @@ export class InProgressListComponent implements OnInit {
 
   onSelect(t: Task): void {
     this.selectedTask = t;
+  }
+
+  openDialog(id: number) {
+    console.log(id);
+    this.dialog.open(DeletePopupComponent, {
+      width: '31.25rem',
+      data: {
+        idTask: id
+      }
+    });
   }
 
 }

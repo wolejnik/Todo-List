@@ -37,6 +37,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-popup/change-desc-task-popup.component';
 import { DaysHoursMinutesSeconds } from './pipes/DaysHoursMinutesSeconds.pipe';
 import { DurationPopupComponent } from './task-details/duration-popup/duration-popup.component';
+import { DeletePopupComponent } from './in-progress-list/delete-popup/delete-popup.component';
 
 
 
@@ -54,12 +55,14 @@ import { DurationPopupComponent } from './task-details/duration-popup/duration-p
       AddNewTaskPopupComponent,
       ChangeDescTaskPopupComponent,
       DaysHoursMinutesSeconds,
-      DurationPopupComponent
+      DurationPopupComponent,
+      DeletePopupComponent
     ],
     entryComponents: [
       AddNewTaskPopupComponent,
       ChangeDescTaskPopupComponent,
-      DurationPopupComponent
+      DurationPopupComponent,
+      DeletePopupComponent
     ],
    imports: [
       BrowserModule,

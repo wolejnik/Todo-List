@@ -19,9 +19,7 @@ getCurrentTime(id: string) {
 }
 
 deleteTask(id: string) {
-  if (confirm('Are you sure to delete this record?')) {
-    this.firestore.doc('Tasks/' + id).delete();
-  }
+  this.firestore.doc('Tasks/' + id).delete();
 }
 
 updateTaskToDone(id: string) {

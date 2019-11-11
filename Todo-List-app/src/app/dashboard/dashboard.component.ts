@@ -1,6 +1,6 @@
 import { AddNewTaskPopupComponent } from './add-new-task-popup/add-new-task-popup.component';
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-dashboard',
