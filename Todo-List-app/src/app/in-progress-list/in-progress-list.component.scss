@@ -1,6 +1,7 @@
 .list_task_inProgress {
   background: #949d96;
   padding: 1rem;
+  margin-left: 3rem;
   border-radius: 0.5rem;
   max-height:66vh;
   overflow-y:auto;
@@ -44,7 +45,7 @@ ul {
     }
   }
   &_options {
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     justify-content: right;
     padding: 0.5rem;
     &_button {
