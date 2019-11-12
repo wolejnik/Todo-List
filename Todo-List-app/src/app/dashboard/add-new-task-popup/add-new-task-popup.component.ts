@@ -39,6 +39,7 @@ export class AddNewTaskPopupComponent implements OnInit {
       this.firestore.collection('Tasks').add({
         userID: this.user.uid,
         desc: addNewTaskForm.controls.task.value,
+        category: addNewTaskForm.controls.category.value,
         dataCreated: new Date().toLocaleString(),
         dataEnd: 0,
         duration: 0,

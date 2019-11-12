@@ -7,6 +7,9 @@
       <mat-form-field class="popup_message_form_input">
         <input matInput name="task" ngModel required #task="ngModel" placeholder="Add new task" required>
       </mat-form-field>
+      <mat-form-field class="popup_message_form_input">
+        <input matInput name="category" ngModel #task="ngModel" placeholder="Add task category">
+      </mat-form-field>
       <div class="popup_buttons">
         <button class="tieto_button cancel" (click)="closeDialog()" routerLink="/dashboard" routerLinkActive="active">Cancel</button>
         <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="onSubmit(addNewTaskForm)">Add</button>
