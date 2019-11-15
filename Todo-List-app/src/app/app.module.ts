@@ -38,6 +38,7 @@ import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-po
 import { DaysHoursMinutesSeconds } from './pipes/DaysHoursMinutesSeconds.pipe';
 import { DurationPopupComponent } from './task-details/duration-popup/duration-popup.component';
 import { DeletePopupComponent } from './in-progress-list/delete-popup/delete-popup.component';
+import { DurationSummaryComponent } from './duration-summary/duration-summary.component';
 
 
 
@@ -56,7 +57,8 @@ import { DeletePopupComponent } from './in-progress-list/delete-popup/delete-pop
       ChangeDescTaskPopupComponent,
       DaysHoursMinutesSeconds,
       DurationPopupComponent,
-      DeletePopupComponent
+      DeletePopupComponent,
+      DurationSummaryComponent
     ],
     entryComponents: [
       AddNewTaskPopupComponent,

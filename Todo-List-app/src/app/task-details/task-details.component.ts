@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task';
 import { ActivatedRoute } from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { ChangeDescTaskPopupComponent } from './change-desc-task-popup/change-desc-task-popup.component';
 import { DurationPopupComponent } from './duration-popup/duration-popup.component';

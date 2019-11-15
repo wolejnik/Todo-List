@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="summary">
+      <div class="summary_background">
+  
+        <div class="summary_background_window">
+            <div class="summary_background_window_items">
+              <p style="display: flex; justify-content: space-between;">
+                Czas przeznaczony na projekt : {{ sumPrj | DaysHoursMinutesSeconds }}
+              </p>
+              <p style="display: flex; justify-content: space-between;">
+                Czas przeznaczony na obowiązki domowe : {{ sumDom | DaysHoursMinutesSeconds }}
+              </p>
+              <p style="display: flex; justify-content: space-between;">
+                Czas przeznaczony na nauke do egzaminu : {{ sumEgz | DaysHoursMinutesSeconds }}
+              </p>
+              <p style="display: flex; justify-content: space-between;">
+                Czas pozostałych czynności : {{ sumPoz | DaysHoursMinutesSeconds }}
+              </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
