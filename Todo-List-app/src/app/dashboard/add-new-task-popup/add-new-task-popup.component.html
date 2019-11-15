@@ -7,6 +7,12 @@
       <mat-form-field class="popup_message_form_input">
         <input matInput name="task" ngModel required #task="ngModel" placeholder="Add new task" required>
       </mat-form-field>
+      <label id="example-radio-group-label">Opcjonalnie, wybierz kategorie zadania</label>
+        <mat-radio-group class="example-radio-group" [ngModelOptions]="{standalone: true}" [(ngModel)]="category" required>
+          <mat-radio-button class="example-radio-button" *ngFor="let cat of categories" [value]="cat" required>
+            {{cat}}
+          </mat-radio-button>
+        </mat-radio-group>
       <div class="popup_buttons">
         <button class="tieto_button cancel" (click)="closeDialog()" routerLink="/dashboard" routerLinkActive="active">Cancel</button>
         <button class="tieto_button add" type="submit" [disabled]="addNewTaskForm.invalid" (click)="onSubmit(addNewTaskForm)">Add</button>

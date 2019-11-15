@@ -13,6 +13,7 @@
               (click)="onSelect(task)"
               (click)="openDialog(task.taskID, task.desc)">Edit</button>
             </p>
+            <p *ngIf="task.category" >Kategoria : {{task.category}}</p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
             <p *ngIf="task.dataEnd !== 0" >Data zakończenia : {{task.dataEnd}}</p>
             <p  style="display: flex; justify-content: space-between;">Czas trwania : {{task.duration | DaysHoursMinutesSeconds}}
