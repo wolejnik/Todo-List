@@ -36,16 +36,16 @@ export class DurationSummaryComponent implements OnInit {
       this.sumDom = 0;
       this.sumPoz = 0;
       this.todoTasks.forEach(task => {
-        if(task.category === 'egzamin'){
+        if(task.category === 'Egzamin'){
           this.sumEgz += task.duration;
           console.log('Egz', this.sumEgz);
-        } else if (task.category === 'projekt') {
+        } else if (task.category === 'Projekt') {
           this.sumPrj += task.duration;
           console.log('Prj', this.sumPrj);
-        }  else if (task.category === 'obowiązki domowe') {
+        }  else if (task.category === 'Obowiązki domowe') {
           this.sumDom += task.duration;
           console.log('Dom', this.sumDom);
-        }else {
+        }else if (task.category === 'Pozostałe zadania'){
           this.sumPoz += task.duration;
           console.log('Poz', this.sumPoz);
         }

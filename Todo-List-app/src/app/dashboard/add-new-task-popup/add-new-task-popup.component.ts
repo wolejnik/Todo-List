@@ -14,6 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 export class AddNewTaskPopupComponent implements OnInit {
 
   user: User;
+  category: string;
+  categories: string[] = ['Egzamin', 'Projekt', 'Obowiązki domowe', 'Pozostałe zadania'];
 
   constructor(
       private dialogRef: MatDialogRef<AddNewTaskPopupComponent>,
@@ -39,7 +41,7 @@ export class AddNewTaskPopupComponent implements OnInit {
       this.firestore.collection('Tasks').add({
         userID: this.user.uid,
         desc: addNewTaskForm.controls.task.value,
-        category: addNewTaskForm.controls.category.value,
+        category: this.category,
         dataCreated: new Date().toLocaleString(),
         dataEnd: 0,
         duration: 0,
@@ -47,6 +49,7 @@ export class AddNewTaskPopupComponent implements OnInit {
         isProgress: false,
         isDone: false,
       });
+      console.log(this.category);
       this.resetForm(addNewTaskForm);
       this.toastr.success('You created new task to do', 'Successful!');
       this.dialogRef.close();

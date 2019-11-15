@@ -34,6 +34,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 import { ChangeDescTaskPopupComponent } from './task-details/change-desc-task-popup/change-desc-task-popup.component';
 import { DaysHoursMinutesSeconds } from './pipes/DaysHoursMinutesSeconds.pipe';
 import { DurationPopupComponent } from './task-details/duration-popup/duration-popup.component';
@@ -74,6 +75,7 @@ import { DurationSummaryComponent } from './duration-summary/duration-summary.co
       AngularFireDatabaseModule,
       BrowserAnimationsModule,
       MatButtonModule,
+      MatRadioModule,
       AngularFireAuthModule,
       ReactiveFormsModule,
       MatCardModule,
