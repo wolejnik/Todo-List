@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.credentials)
     .then(() => {
-      this.toastr.success(`You logged as ${this.credentials.login}`, 'Successful!');
+      this.toastr.success(`Zalogowano jako ${this.credentials.login}`, 'Udało się!');
       this.router.navigate(['/dashboard']);
     })
     .catch(

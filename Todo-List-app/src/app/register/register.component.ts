@@ -45,30 +45,13 @@ export class RegisterComponent implements OnInit {
   register() {
     this.authService.register(this.credentials)
     .then( () => {
-      console.log('Created account');
-      this.toastr.success('Create new account', 'Successful!');
+      this.toastr.success('Pomyślnie stworzono konto.', 'Udało się!');
       this.router.navigate(['/login']);
     })
     .catch(
       error => this.toastr.error('Error!', error.message)
     );
   }
-
-  // getPasswordConfirming() {
-  //   console.log('confirm password' + this.formGroup.get('password').value + ' to drugie' + this.formGroup.get('confirmPassword').value);
-
-  //   console.log(this.formGroup.get('password').value === this.formGroup.get('confirmPassword').value ? 'Pole hasła takie same.' :
-  //   this.formGroup.get('password').value !== this.formGroup.get('confirmPassword').value ? 'hasła nie są takie same.' : '')
-
-  //   // if (this.formGroup.get('password').value === this.formGroup.get('confirmPassword').value) {
-  //   //   return { 'requirements': true };
-  //   // } else {
-  //   //   return null;
-  //   // }
-
-  //   // return this.formGroup.get('password').value === this.formGroup.get('confirmPassword').value ? 'Pole hasła takie same.' :
-  //   // this.formGroup.get('password').value !== this.formGroup.get('confirmPassword').value ? 'hasła nie są takie same.' : '';
-  // }
 
   checkPassword(control) {
     const enteredPassword = control.value;

@@ -51,7 +51,7 @@ export class AddNewTaskPopupComponent implements OnInit {
       });
       console.log(this.category);
       this.resetForm(addNewTaskForm);
-      this.toastr.success('You created new task to do', 'Successful!');
+      this.toastr.success('Dodałeś zdanie do wykonania.', 'Udało się!');
       this.dialogRef.close();
     }
 

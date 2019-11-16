@@ -42,17 +42,17 @@ export class TodoListComponent implements OnInit {
 
    onDelete(taskID: string) {
      this.taskService.deleteTask(taskID);
-     this.toastr.error('You deleted task', 'Successful!');
+     this.toastr.error('Zadanie usunięte', 'Udało się!');
    }
 
    updateTaskToDone(taskID: string) {
      this.taskService.updateTaskToDone(taskID);
-     this.toastr.success('Done task', 'Good job!');
+     this.toastr.success('Wykonałeś zdanie', 'Dobra robota!');
    }
 
    updateTaskToProgress(taskID: string) {
     this.taskService.updateTaskToProgress(taskID);
-    this.toastr.warning('the task in progress', 'Good luck!');
+    this.toastr.warning('Zadanie w trakcie wykonywania', 'Powodzenia!');
   }
 
 }

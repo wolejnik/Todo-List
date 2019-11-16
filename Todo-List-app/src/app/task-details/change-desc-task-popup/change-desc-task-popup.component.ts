@@ -40,7 +40,7 @@ export class ChangeDescTaskPopupComponent implements OnInit {
     onSubmit(addNewTaskForm: NgForm) {
       this.taskService.updateTaskDesc(this.data.idTask, addNewTaskForm.controls.task.value);
       this.resetForm(addNewTaskForm);
-      this.toastr.success('You changed description the task', 'Successful!');
+      this.toastr.success('Xmieniono opis zadania', 'Udało się!');
       this.dialogRef.close();
     }
 

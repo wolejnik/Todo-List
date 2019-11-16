@@ -42,7 +42,7 @@ export class DoneListComponent implements OnInit {
 
   onDelete(taskID: string) {
     this.taskService.deleteTask(taskID);
-    this.toastr.error('You deleted task', 'Successful!');
+    this.toastr.error('Usunięto zadanie.', 'Udało się!');
   }
 
 }

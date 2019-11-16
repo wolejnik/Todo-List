@@ -61,13 +61,13 @@ export class DurationPopupComponent implements OnInit {
     closeDialog() {
       this.dialogRef.close();
       if (!this.save) {
-        this.toastr.warning('the task time not saved', 'Warning!');
+        this.toastr.warning('NIe zapisano czasu wykonywanego zadania.', 'Ostrzeżenie!');
       }
     }
 
 
     startTimer(timeCurrent: number) {
-      this.toastr.success('Start doing the task', 'Successful!');
+      this.toastr.success('Rozpoczęto wykonywanie zadania', 'Udało się!');
       if (this.start) {
         this.time = timeCurrent;
         this.start = false;
@@ -87,7 +87,7 @@ export class DurationPopupComponent implements OnInit {
     pauseTimer() {
       clearInterval(this.interval);
       this.save = true;
-      this.toastr.success('Save time the task', 'Successful!');
+      this.toastr.success('Zapisano czas zadania.', 'Udało się!');
       this.saveTime();
     }
 

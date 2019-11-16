@@ -48,13 +48,13 @@ export class InProgressListComponent implements OnInit {
 
   updateTaskToDone(taskID: string) {
     this.taskService.updateTaskToDone(taskID);
-    this.toastr.success('Done task', 'Good job!');
+    this.toastr.success('Zrobiono zadanie.', 'Dobra robota!');
 
   }
 
   updateTaskToToDo(taskID: string) {
     this.taskService.updateTaskToToDo(taskID);
-    this.toastr.warning('the task awaits completion', 'Successful!');
+    this.toastr.warning('Zadanie przeniesione', 'Udało się!');
   }
 
   onSelect(t: Task): void {
