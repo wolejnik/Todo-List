@@ -11,7 +11,7 @@
               mat-raised-button class="task_options_button" color="green"
               [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
-              (click)="openDialog(task.taskID, task.desc)">Edit</button>
+              (click)="openDialog(task.taskID, task.desc)">Edytuj</button>
             </p>
             <p *ngIf="task.category" >Kategoria : {{task.category}}</p>
             <p>Data utworzenia : {{task.dataCreated}}</p>
@@ -21,7 +21,7 @@
               mat-raised-button class="task_options_button" color="green"
               [class.selected]="task === selectedTask"
               (click)="onSelect(task)"
-              (click)="openDialog2(task.taskID, task.duration, task.desc)">Open timer</button>
+              (click)="openDialog2(task.taskID, task.duration, task.desc)">Odmierzaj czas wykonania</button>
             </p>
           </div>
         </ng-container>

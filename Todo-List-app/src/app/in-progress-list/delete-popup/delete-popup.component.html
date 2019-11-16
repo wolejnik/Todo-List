@@ -1,12 +1,12 @@
 <div class="popup">
     <div class="popup_title">
-      Delete task
+      Usuń zadanie
     </div>
     <div class="popup_message">
       <form #deleteTaskForm="ngForm" class="popup_message_form">
         <div class="popup_buttons">
-          <button class="tieto_button cancel" (click)="closeDialog()" routerLink="/dashboard" routerLinkActive="active">Cancel</button>
-          <button class="tieto_button delete" type="submit" (click)="onDelete(data.idTask)">Delete</button>
+          <button class="tieto_button cancel" (click)="closeDialog()" routerLink="/dashboard" routerLinkActive="active">Wyjdź</button>
+          <button class="tieto_button delete" type="submit" (click)="onDelete(data.idTask)">Usuń</button>
         </div>
       </form>
     </div>

@@ -1,6 +1,6 @@
 <div class="popup">
     <div class="popup_title">
-      Change description the task
+      Edytuk opis zadania
     </div>
     <div class="popup_message">
       <form #addNewTaskForm="ngForm" autocomplete="off" class="popup_message_form">
@@ -8,8 +8,8 @@
           <input matInput name="task" ngModel required #task="ngModel" placeholder="Change description" [(ngModel)]="data.descTask" required>
         </mat-form-field>
         <div class="popup_buttons">
-          <button class="tieto_button cancel" (click)="closeDialog()">Cancel</button>
-          <button class="tieto_button change" type="submit" [disabled]="addNewTaskForm.invalid" (click)="onSubmit(addNewTaskForm)">Change</button>
+          <button class="tieto_button cancel" (click)="closeDialog()">Wyjdź</button>
+          <button class="tieto_button change" type="submit" [disabled]="addNewTaskForm.invalid" (click)="onSubmit(addNewTaskForm)">Zmień</button>
         </div>
       </form>
     </div>

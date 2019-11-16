@@ -1,6 +1,6 @@
 <div class="popup">
   <div class="popup_title">
-    Duration time
+    Czas trwania
   </div>
   <div class="popup_desc">
     {{this.data.descTask}}
@@ -8,24 +8,24 @@
   <div class="popup_message">
     <div *ngIf="time > 0; else infoTimer">
       <p *ngIf="tmpTime >= 0 && minutes == 0 && hour == 0 && day == 0 ">
-        {{tmpTime}} Seconds
+        {{tmpTime}} Sekund
       </p>
       <div *ngIf="tmpTime >= 0 && minutes > 0 && hour == 0 && day == 0">
         <div [ngPlural]="minutes">
-          <ng-template ngPluralCase="=1">{{minutes}} Minute, {{tmpTime}} Seconds</ng-template>
-          <ng-template ngPluralCase="other">{{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+          <ng-template ngPluralCase="=1">{{minutes}} Minuta, {{tmpTime}} Sekund</ng-template>
+          <ng-template ngPluralCase="other">{{minutes}} Minut, {{tmpTime}} Sekund</ng-template>
         </div>
       </div>
       <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour > 0 && day == 0">
         <div [ngPlural]="hour">
-          <ng-template ngPluralCase="=1">{{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          <ng-template ngPluralCase="other">{{hour}} Hours, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+          <ng-template ngPluralCase="=1">{{hour}} Godzina, {{minutes}} Minut, {{tmpTime}} Sekund</ng-template>
+          <ng-template ngPluralCase="other">{{hour}} Godzin, {{minutes}} Minut, {{tmpTime}} Sekund</ng-template>
         </div>
       </div>
       <div *ngIf="tmpTime >= 0 && minutes >= 0 && hour >= 0 && day > 0">
         <div [ngPlural]="day">
-          <ng-template ngPluralCase="=1">{{day}} Day, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
-          <ng-template ngPluralCase="other">{{day}} Days, {{hour}} Hour, {{minutes}} Minutes, {{tmpTime}} Seconds</ng-template>
+          <ng-template ngPluralCase="=1">{{day}} Dzień, {{hour}} Godzina, {{minutes}} Minut, {{tmpTime}} Sekund</ng-template>
+          <ng-template ngPluralCase="other">{{day}} Dni, {{hour}} Godzin, {{minutes}} Minut, {{tmpTime}} Sekund</ng-template>
         </div>
       </div>
     </div>
@@ -33,9 +33,9 @@
       Wciśnij start, aby rozpocząć zadanie.
     </ng-template>
     <div class="popup_buttons">
-      <button mat-raised-button class="tieto_button cancel" (click)="closeDialog()">Cancel</button>
+      <button mat-raised-button class="tieto_button cancel" (click)="closeDialog()">Wyjdź</button>
       <button mat-raised-button class="tieto_button start" (click)="startTimer(this.data.timeTask)">Start</button>
-      <button mat-raised-button class="tieto_button pause" color="primary" (click)="pauseTimer()">Pause</button>
+      <button mat-raised-button class="tieto_button pause" color="primary" (click)="pauseTimer()">Pauza</button>
     </div>
   </div>
 </div>
