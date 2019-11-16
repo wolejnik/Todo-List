@@ -16,16 +16,16 @@ export class DaysHoursMinutesSeconds implements PipeTransform {
     tmpTime -= minutes * 60;
 
     if (tmpTime > 0 && minutes === 0 && hour === 0 && day === 0) {
-      return tmpTime + ' Seconds';
+      return tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour === 0 && day === 0) {
-        return minutes + ' Minutes - ' + tmpTime + ' Seconds';
+        return minutes + ' Minut - ' + tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour > 0 && day === 0) {
-        return hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Seconds';
+        return hour + ' Godzin - ' + minutes + ' Minut - ' + tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour > 0 && day > 0) {
-        return day + ' Days - ' + hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Seconds';
+        return day + ' Dni - ' + hour + ' Godzin - ' + minutes + ' Minut - ' + tmpTime + ' Sekund';
     }
 
-    // return day + ' Days - ' + hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Seconds';
+    // return day + ' Days - ' + hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Sekund';
   }
 
 }
