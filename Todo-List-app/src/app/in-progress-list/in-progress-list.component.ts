@@ -62,7 +62,6 @@ export class InProgressListComponent implements OnInit {
   }
 
   openDialog(id: number) {
-    console.log(id);
     this.dialog.open(DeletePopupComponent, {
       width: '31.25rem',
       data: {

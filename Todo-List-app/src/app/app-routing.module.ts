@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
 import { DurationSummaryComponent } from './duration-summary/duration-summary.component';
+import { TaskDetailsTodoComponent } from './task-details-todo/task-details-todo.component';
+import { TaskDetailsDoneComponent } from './task-details-done/task-details-done.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,14 @@ const routes: Routes = [
   {
     path: 'task/:id',
     component: TaskDetailsComponent
+  },
+  {
+    path: 'tasktodo/:id',
+    component: TaskDetailsTodoComponent
+  },
+  {
+    path: 'taskdone/:id',
+    component: TaskDetailsDoneComponent
   },
   {
     path: 'summary',

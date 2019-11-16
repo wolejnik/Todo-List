@@ -27,6 +27,22 @@ ul {
     overflow-wrap: break-word;
     word-wrap: break-word;
     align-self: center;
+    & > a {
+      background:
+      linear-gradient(
+        to bottom, #6b9658 0%,#6b9658 100%
+      );
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+      text-decoration: none;
+      transition: background-size .2s;
+      color: black;
+      &:hover 
+      {
+        background-size: 4px 50px; 
+      }
+    }
   }
   &_options {
     justify-content: right;

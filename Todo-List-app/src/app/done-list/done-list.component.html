@@ -6,10 +6,14 @@
           <li>
             <div class="task">
               <div class="task_desc col-10">
-                {{task.desc}}
+                <a
+                [class.selected]="task === selectedTask"
+                (click)="onSelect(task)"
+                [routerLink]="['/taskdone', task.taskID]">{{task.desc}}
+                </a>
               </div>
               <div class="task_options col-2">
-                <button mat-raised-button color="warn" (click)="onDelete(task.taskID)">Usuń</button>
+                <button mat-raised-button color="warn" (click)="openDialog(task.taskID)">Usuń</button>
               </div>
             </div>
           </li>

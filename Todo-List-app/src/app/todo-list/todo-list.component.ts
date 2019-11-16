@@ -4,6 +4,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { TaskListService } from '../shared/task-list/task-list.service';
 import { User } from 'firebase';
 import { ToastrService } from 'ngx-toastr';
+import { DeletePopupComponent } from '../in-progress-list/delete-popup/delete-popup.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-todo-list',
@@ -14,11 +16,13 @@ export class TodoListComponent implements OnInit {
 
   user: User;
   todoTasks: Task[];
+  selectedTask: Task;
 
   constructor(
     private taskService: TaskListService,
     private fireAuth: AngularFireAuth,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public dialog: MatDialog,
   ) {
     this.fireAuth.authState.subscribe(user => {
       this.user = user;
@@ -53,6 +57,20 @@ export class TodoListComponent implements OnInit {
    updateTaskToProgress(taskID: string) {
     this.taskService.updateTaskToProgress(taskID);
     this.toastr.warning('Zadanie w trakcie wykonywania', 'Powodzenia!');
+  }
+
+  onSelect(t: Task): void {
+    this.selectedTask = t;
+  }
+
+  openDialog(id: number) {
+    console.log(id);
+    this.dialog.open(DeletePopupComponent, {
+      width: '31.25rem',
+      data: {
+        idTask: id
+      }
+    });
   }
 
 }

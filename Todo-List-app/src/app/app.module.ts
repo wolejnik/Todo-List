@@ -40,6 +40,8 @@ import { DaysHoursMinutesSeconds } from './pipes/DaysHoursMinutesSeconds.pipe';
 import { DurationPopupComponent } from './task-details/duration-popup/duration-popup.component';
 import { DeletePopupComponent } from './in-progress-list/delete-popup/delete-popup.component';
 import { DurationSummaryComponent } from './duration-summary/duration-summary.component';
+import { TaskDetailsTodoComponent } from './task-details-todo/task-details-todo.component';
+import { TaskDetailsDoneComponent } from './task-details-done/task-details-done.component';
 
 
 
@@ -59,7 +61,9 @@ import { DurationSummaryComponent } from './duration-summary/duration-summary.co
       DaysHoursMinutesSeconds,
       DurationPopupComponent,
       DeletePopupComponent,
-      DurationSummaryComponent
+      DurationSummaryComponent,
+      TaskDetailsTodoComponent,
+      TaskDetailsDoneComponent
     ],
     entryComponents: [
       AddNewTaskPopupComponent,
