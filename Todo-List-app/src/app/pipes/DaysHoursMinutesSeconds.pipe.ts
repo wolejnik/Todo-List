@@ -18,11 +18,11 @@ export class DaysHoursMinutesSeconds implements PipeTransform {
     if (tmpTime > 0 && minutes === 0 && hour === 0 && day === 0) {
       return tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour === 0 && day === 0) {
-        return minutes + ' Minut - ' + tmpTime + ' Sekund';
+        return minutes + ' Minuty - ' + tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour > 0 && day === 0) {
-        return hour + ' Godzin - ' + minutes + ' Minut - ' + tmpTime + ' Sekund';
+        return hour + ' Godzin - ' + minutes + ' Minuty - ' + tmpTime + ' Sekund';
     } else if (tmpTime > 0 && minutes > 0 && hour > 0 && day > 0) {
-        return day + ' Dni - ' + hour + ' Godzin - ' + minutes + ' Minut - ' + tmpTime + ' Sekund';
+        return day + ' Dni - ' + hour + ' Godzin - ' + minutes + ' Minuty - ' + tmpTime + ' Sekund';
     }
 
     // return day + ' Days - ' + hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Sekund';
