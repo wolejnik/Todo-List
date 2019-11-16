@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthentificationService } from './shared/auth/authentification.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Todo-List-app';
+
+  constructor(
+    private authService: AuthentificationService
+  ) {}
+
+  logout() {
+    this.authService.logout();
+  }
+
+
 }

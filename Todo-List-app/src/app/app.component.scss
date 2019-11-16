@@ -1,10 +1,20 @@
 .navbar {
+  display: flex; 
+  justify-content: space-between;
+  & > button {
+    float: right;
+  }
   min-height: 5rem;
   &_item {
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
     a {
       color: white;
+    }
+  }
+  &_logout {
+    & > img {
+    padding-top: 1rem;
     }
   }
 }

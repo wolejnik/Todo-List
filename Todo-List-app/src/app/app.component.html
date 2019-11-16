@@ -3,6 +3,13 @@
     <a class="navbar_item" [routerLink]="['/']">
       <img src="../../assets/icon.png">
     </a>
+    <ul class="navigation">
+      <li>
+        <a class="navbar_logout" (click)="logout()">
+          <img src="../assets/exit (1).png">
+        </a>
+      </li>
+    </ul>
   </nav>
 </header>
 <router-outlet></router-outlet>
