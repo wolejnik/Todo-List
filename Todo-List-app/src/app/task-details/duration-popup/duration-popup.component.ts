@@ -81,7 +81,7 @@ export class DurationPopupComponent implements OnInit {
       this.tmpTime -= this.hour * 3600;
       this.minutes = Math.floor(this.tmpTime / 60);
       this.tmpTime -= this.minutes * 60;
-      }, 100);
+      }, 1000);
     }
 
     pauseTimer() {
