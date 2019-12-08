@@ -5,17 +5,18 @@
         <ng-container *ngIf="task.isToDo == true" >
           <li>
             <div class="task">
-              <div class="task_desc col-5">
+              <div class="task_desc col-3">
                 <a
+                name="show-details"
                 [class.selected]="task === selectedTask"
                 (click)="onSelect(task)"
                 [routerLink]="['/tasktodo', task.taskID]">{{task.desc}}
                 </a>
               </div>
-              <div class="task_options col-7">
-                <button mat-raised-button class="task_options_button" color="green" (click)="updateTaskToDone(task.taskID)">Zrobione</button>
-                <button mat-raised-button color="primary" (click)="updateTaskToProgress(task.taskID)">W trakcie</button>
-                <button mat-raised-button color="warn" (click)="openDialog(task.taskID)">Usuń</button>
+              <div class="task_options col-9">
+                <button mat-raised-button class="task_options_button" name="todoDone" color="green" (click)="updateTaskToDone(task.taskID)">Zrobione</button>
+                <button mat-raised-button color="primary" name="todoInprogress" (click)="updateTaskToProgress(task.taskID)">W trakcie</button>
+                <button mat-raised-button color="warn" name="todoDelete" (click)="openDialog(task.taskID)">Usuń</button>
               </div>
             </div>
           </li>

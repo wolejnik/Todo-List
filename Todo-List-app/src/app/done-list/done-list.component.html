@@ -5,15 +5,15 @@
         <ng-container *ngIf="task.isDone == true" >
           <li>
             <div class="task">
-              <div class="task_desc col-10">
+              <div class="task_desc col-9">
                 <a
                 [class.selected]="task === selectedTask"
                 (click)="onSelect(task)"
                 [routerLink]="['/taskdone', task.taskID]">{{task.desc}}
                 </a>
               </div>
-              <div class="task_options col-2">
-                <button mat-raised-button color="warn" (click)="openDialog(task.taskID)">Usuń</button>
+              <div class="task_options col-3">
+                <button mat-raised-button name="doneDelete" color="warn" (click)="openDialog(task.taskID)">Usuń</button>
               </div>
             </div>
           </li>

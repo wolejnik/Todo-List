@@ -6,14 +6,14 @@
       </mat-card-header>
       <form [formGroup]="formGroup">
           <mat-form-field class="mat_form_field_width">
-            <input matInput placeholder="Adres email" formControlName="email" [(ngModel)]="credentials.login">
+            <input matInput placeholder="Adres email" name="loginEmail" formControlName="email" [(ngModel)]="credentials.login">
             <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
               {{ getErrorEmail() }}
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="mat_form_field_width">
-            <input matInput type="password" placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
+            <input matInput type="password" placeholder="Hasło" name="loginPassword" formControlName="password" [(ngModel)]="credentials.password">
             <mat-hint>Wybierz hasło składające się z co najmniej ośmiu znaków, jednej dużej litery i jednej cyfry.</mat-hint>
             <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
               {{ getErrorPassword() }}
@@ -21,7 +21,7 @@
           </mat-form-field>
 
           <div class="form-element">
-            <button mat-raised-button color="primary" type="submit" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="login()">Zaloguj się</button>
+            <button mat-raised-button color="primary" type="submit" name="loginButton" class="btn-block button_login" [disabled]="!formGroup.valid" (click)="login()">Zaloguj się</button>
           </div>
         </form>
     </mat-card>

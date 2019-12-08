@@ -6,14 +6,14 @@
         </mat-card-header>
         <form [formGroup]="formGroup">
           <mat-form-field class="mat_form_field_width">
-            <input matInput placeholder="Adres email" formControlName="email" [(ngModel)]="credentials.login">
+            <input matInput placeholder="Adres email" name="email" formControlName="email" [(ngModel)]="credentials.login">
             <mat-error *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched">
               {{ getErrorEmail() }}
             </mat-error>
           </mat-form-field>
 
           <mat-form-field class="mat_form_field_width">
-            <input type="password" matInput placeholder="Hasło" formControlName="password" [(ngModel)]="credentials.password">
+            <input type="password" matInput placeholder="Hasło" name="password" formControlName="password" [(ngModel)]="credentials.password">
             <mat-hint>Wybierz hasło składające się z co najmniej ośmiu znaków, jednej dużej litery i jednej cyfry.</mat-hint>
             <mat-error *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched">
               {{ getErrorPassword() }}
@@ -23,13 +23,13 @@
 
 
           <mat-form-field class="mat_form_field_width_confirmPassword">
-            <input type="password" matInput placeholder="Potwierdz wpisane hasło" formControlName="confirmPassword">
+            <input type="password" matInput placeholder="Potwierdz wpisane hasło" name="passwordConfirm" formControlName="confirmPassword">
             <mat-hint>Hasło musi być takie same jak wyżej.</mat-hint>
             <mat-error *ngIf="formGroup.controls['confirmPassword'].pristine || formGroup.controls['confirmPassword'].errors?.MatchPassword">Hasła nie są takie same.</mat-error>
           </mat-form-field>
 
           <div class="form-element">
-            <button mat-raised-button color="warn" type="submit" class="btn-block button_register" [disabled]="!formGroup.valid" (click)="register()">Stwórz konto</button>
+            <button mat-raised-button color="warn" name="registerButton" type="submit" class="btn-block button_register" [disabled]="!formGroup.valid" (click)="register()">Stwórz konto</button>
           </div>
         </form>
       </mat-card>

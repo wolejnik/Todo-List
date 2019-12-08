@@ -5,7 +5,7 @@
     <div class="popup_message">
       <form #addNewTaskForm="ngForm" autocomplete="off" class="popup_message_form">
         <mat-form-field class="popup_message_form_input">
-          <input matInput name="task" ngModel required #task="ngModel" placeholder="Change description" [(ngModel)]="data.descTask" required>
+          <input matInput name="task" id="editTask" ngModel required #task="ngModel" placeholder="Change description" [(ngModel)]="data.descTask" required>
         </mat-form-field>
         <div class="popup_buttons">
           <button class="tieto_button cancel" (click)="closeDialog()">Wyjdź</button>
