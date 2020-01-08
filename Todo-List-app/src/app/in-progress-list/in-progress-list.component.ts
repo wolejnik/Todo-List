@@ -24,7 +24,6 @@ export class InProgressListComponent implements OnInit {
     private fireAuth: AngularFireAuth,
     private toastr: ToastrService,
     public dialog: MatDialog,
-
     ) {
       this.fireAuth.authState.subscribe(user => {
         this.user = user;
@@ -40,7 +39,6 @@ export class InProgressListComponent implements OnInit {
       this.inProgressTasks = t.map(item => {
         return {
           taskID: item.payload.doc.id,
-          ...item.payload.doc.data()
         } as Task;
       });
     });

@@ -33,7 +33,6 @@ export class TaskDetailsComponent implements OnInit {
       this.todoTasks = t.map(item => {
         return {
           taskID: item.payload.doc.id,
-          ...item.payload.doc.data()
         } as Task;
       });
     });

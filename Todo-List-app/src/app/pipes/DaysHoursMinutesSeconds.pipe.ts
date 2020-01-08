@@ -24,8 +24,6 @@ export class DaysHoursMinutesSeconds implements PipeTransform {
     } else if (tmpTime > 0 && minutes > 0 && hour > 0 && day > 0) {
         return day + ' Dni - ' + hour + ' Godzin - ' + minutes + ' Minuty - ' + tmpTime + ' Sekund';
     }
-
-    // return day + ' Days - ' + hour + ' Hors - ' + minutes + ' Minutes - ' + tmpTime + ' Sekund';
   }
-
+  
 }

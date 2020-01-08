@@ -14,10 +14,6 @@ getTasks() {
   return this.firestore.collection('Tasks').snapshotChanges();
 }
 
-getCurrentTime(id: string) {
-  // this.firestore.doc('Tasks/' + id + '/duration').get();
-}
-
 deleteTask(id: string) {
   this.firestore.doc('Tasks/' + id).delete();
 }
