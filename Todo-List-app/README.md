@@ -1,27 +1,79 @@
-# TodoListApp
+# ToDo List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.13.
+## Table of contents
 
-## Development server
+1. [Purpose](#purpose)
+2. [Prerequisites](#prerequisites)
+3. [Setup](#setup)
+4. [Running the tests](#runningthetests)
+5. [Built With](#builtwith)
+6. [Appearance of the application](#appearanceoftheapplication)
+7. [License] (#license)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Purpose
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The purpose of this engineer thesis was designed and created Single Page Applicaton which supports the management of personal tasks to be carried out. 
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Prerequisites
 
-## Running unit tests
+Download and install Node.js
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+https://nodejs.org/en/
+```
 
-## Running end-to-end tests
+Install angular CLI using Node.js command prompt
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+npm install -g @angular/cli (using node.js)
+```
 
-## Further help
+## Setup
+To run this project, install it locally using npm:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+$ cd Todo-List-app
+$ npm install
+$ ng serve
+```
+Navigate to:
+
+```
+`http://localhost:4200/`
+```
+
+## Running the tests
+
+Unit tests for front-end angular are written in NightWatch and are located in .\Nightwatch.js, these tests check the general functionality of the front-end part of the application. To start the tests run:
+```bash
+ng test
+```
+or
+
+```bash
+nightwatch test
+```
+
+```python
+import foobar
+
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
+
+## Built With
+
+**Angular 8** - Client-side TypeScript based framework  
+**Firebase** - provides modules such as :  **Firebase Auth** **Firebase Database** **Firebase Storage**
+
+## Appearance of the application
+
+![Screen_1](https://drive.google.com/file/d/1qQvUrEIeRrhoU-dOQ3up5DSy1-5bLIHA/view?usp=sharing "Optional title")
+
+![Screen_2](https://drive.google.com/file/d/1gkhZJoXr9LWNk8PJPp1dwqvjl9ObrlQi/view?usp=sharing "Optional title")
+
+## License
+This project is licensed under the Apache License 2.0 License - see the LICENSE.md file for details
