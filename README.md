@@ -63,7 +63,7 @@ nightwatch test
 
 ## Appearance of the application
 
-![Screen_1](https://drive.google.com/file/d/1qQvUrEIeRrhoU-dOQ3up5DSy1-5bLIHA/view?usp=sharing "Optional title")
+![Screen_1](https://drive.google.com/drive/folders/1iQDheHAgnawrJEFhAl3_IAoJ1YNurcCM "Optional title")
 
 ![Screen_2](https://drive.google.com/file/d/1gkhZJoXr9LWNk8PJPp1dwqvjl9ObrlQi/view?usp=sharing "Optional title")
 
